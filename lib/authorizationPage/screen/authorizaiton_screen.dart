@@ -17,11 +17,21 @@ class AuthorizaitonScreen extends StatelessWidget {
           width: width(context),
           padding: EdgeInsets.only(left: 5.w, right: 5.w,top: 0.h),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 20.h),
-              Text('Вход',style: Theme.of(context).textTheme.labelMedium,),
-              Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration,))
+              SizedBox(height: 25.h),
+              Text('Вход',style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center,),
+              SizedBox(height: 3.h,),
+              Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Логин или номер телефона'),)), 
+              SizedBox(height: 2.h,),
+              Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('пароль'),)),
+              SizedBox(height: 2.h,),
+              Container(
+                decoration: button_black_decoration,
+                child: TextButton(onPressed: (){
+                  
+                }, child: Text('Войти', style: Theme.of(context).textTheme.labelMedium,)),
+              )
             ],
           ),
         ),
