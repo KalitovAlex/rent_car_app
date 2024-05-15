@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:rent_car_app/core/routes.gr.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
 import 'package:rent_car_app/main.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
@@ -41,7 +42,9 @@ class AuthorizaitonScreen extends StatelessWidget {
                   height: 6.h,
                   width: 60.w,
                   decoration: button_grey_decoration,
-                  child: TextButton(onPressed: (){}, child: Text('Регистрация',style: Theme.of(context).textTheme.titleMedium,)),
+                  child: TextButton(onPressed: (){
+                    AutoRouter.of(context).push(const RegistrationRoute());
+                  }, child: Text('Регистрация',style: Theme.of(context).textTheme.titleMedium,)),
                 )
               ],
             ),
