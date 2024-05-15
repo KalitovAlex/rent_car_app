@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:rent_car_app/authorizationPage/auth_gate.dart' as _i1;
+import 'package:rent_car_app/authorizationPage/shared/auth_gate.dart' as _i1;
 import 'package:rent_car_app/authorizationPage/screen/authorizaiton_screen.dart'
     as _i2;
 import 'package:rent_car_app/authorizationPage/screen/registration_screen.dart'
