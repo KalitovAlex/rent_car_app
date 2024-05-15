@@ -12,6 +12,7 @@ class RegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController userLogin, userName, userPhone, userEmail,userPassword,userReturnPassword  = TextEditingController();
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -45,7 +46,6 @@ class RegistrationScreen extends StatelessWidget {
             child: TextButton(onPressed: (){},
             child: Text('Зарегистрироваться',
             style: Theme.of(context).textTheme.titleMedium,)),)
-          
           ],
         ),
       ),
