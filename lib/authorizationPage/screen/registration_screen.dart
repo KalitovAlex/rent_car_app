@@ -27,9 +27,15 @@ class RegistrationScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+    
+          // logo
+
           SizedBox(height: 5.h,),
           Text('Регистрация',style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center,),
           SizedBox(height: 4.h,),
+
+          // text fields 
+
           Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(
             controller: userLogin,
             decoration: invisible_input_decoration('Введите логин'),)), 
@@ -65,6 +71,9 @@ class RegistrationScreen extends StatelessWidget {
             controller: userSecondPassword,
             decoration: invisible_input_decoration('Введите повторно пароль'),)), 
           SizedBox(height: 4.h,),
+
+          // register button
+
           Container(
             height: 6.h,
             width: 80.w,
