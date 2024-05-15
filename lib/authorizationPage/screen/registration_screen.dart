@@ -16,7 +16,6 @@ class RegistrationScreen extends StatelessWidget {
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            
 
           ],
         ),
