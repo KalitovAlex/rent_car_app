@@ -12,6 +12,11 @@ final theme = ThemeData(
       color: Colors.white,
       fontSize: 20,
       fontWeight: FontWeight.w500
+    ),
+    titleMedium: TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+      fontWeight: FontWeight.w500
     )
   ),
 );
