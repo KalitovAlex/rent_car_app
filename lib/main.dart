@@ -13,18 +13,19 @@ import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 void main() async{
+  initDependencies();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
-  initDependencies();
   runApp(const MyApp());
 }
+final talker = TalkerFlutter.init();
 void initSingletons(){
 
 }
 void initDependencies(){
-  final talker = TalkerFlutter.init();
+
   GetIt.I.registerSingleton<Talker>(talker);
   final talkerDioLogger = TalkerDioLogger(
     talker: talker
