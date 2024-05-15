@@ -1,9 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/authorizationPage/screen/authorizaiton_screen.dart';
 import 'package:rent_car_app/main/home_page.dart';
-
+@RoutePage()
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
 

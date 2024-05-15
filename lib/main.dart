@@ -43,7 +43,6 @@ void initDependencies(){
       printEventFullData: true
     )
   );
-
 }
 
 class MyApp extends StatefulWidget {
