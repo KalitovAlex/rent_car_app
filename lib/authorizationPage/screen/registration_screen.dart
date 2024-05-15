@@ -37,7 +37,15 @@ class RegistrationScreen extends StatelessWidget {
           Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите пароль'),)), 
           SizedBox(height: 2.h,),
           Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите повторно пароль'),)), 
-          SizedBox(height: 2.h,),
+          SizedBox(height: 4.h,),
+          Container(
+            height: 6.h,
+            width: 80.w,
+            decoration: button_grey_decoration,
+            child: TextButton(onPressed: (){},
+            child: Text('Зарегистрироваться',
+            style: Theme.of(context).textTheme.titleMedium,)),)
+          
           ],
         ),
       ),

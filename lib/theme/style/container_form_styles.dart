@@ -9,11 +9,11 @@ color: Colors.black,
 borderRadius: BorderRadius.circular(30)
 );
 BoxDecoration button_grey_decoration = BoxDecoration(
-color: const Color.fromARGB(255, 179, 179, 179).withOpacity(0.8),
+color: const Color.fromARGB(255, 179, 179, 179).withOpacity(0.9),
 borderRadius: BorderRadius.circular(30),
 boxShadow: [
   BoxShadow(
-    color: Colors.black.withOpacity(0.2),
+    color: Colors.black.withOpacity(0.3),
     blurRadius: 10,
     offset: Offset(0, 4)
   )
