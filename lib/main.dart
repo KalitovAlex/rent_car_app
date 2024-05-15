@@ -12,7 +12,11 @@ import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 void main() {
+  initDependencies();
   runApp(const MyApp());
+}
+void initSingletons(){
+
 }
 void initDependencies(){
   final talker = TalkerFlutter.init();
@@ -52,7 +56,9 @@ class _MyAppState extends State<MyApp> {
         return MaterialApp.router(
         theme: theme,
         debugShowCheckedModeBanner: false,
-        routerConfig: _appRouter.config(),
+        routerConfig: _appRouter.config(
+          navigatorObservers: () =>  [TalkerRouteObserver(GetIt.I<Talker>())]
+        ),
       );
       },
     );
