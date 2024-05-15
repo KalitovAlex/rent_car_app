@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
-import 'package:rent_car_app/main.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:sizer/sizer.dart';
