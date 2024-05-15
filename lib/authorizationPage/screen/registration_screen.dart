@@ -12,7 +12,12 @@ class RegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController userLogin, userName, userPhone, userEmail,userPassword,userReturnPassword  = TextEditingController();
+    TextEditingController userLogin = TextEditingController();
+    TextEditingController userName = TextEditingController();
+    TextEditingController userNumber = TextEditingController();
+    TextEditingController userEmail = TextEditingController();
+    TextEditingController userPassword = TextEditingController();
+    TextEditingController userSecondPassword = TextEditingController();
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -27,17 +32,40 @@ class RegistrationScreen extends StatelessWidget {
           SizedBox(height: 5.h,),
           Text('Регистрация',style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center,),
           SizedBox(height: 4.h,),
-          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите логин'),)), 
+          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(
+            controller: userLogin,
+            decoration: invisible_input_decoration('Введите логин'),)), 
           SizedBox(height: 2.h,),
-          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите ФИО'),)), 
+          Container(height: 6.h,
+          decoration: text_field_boxdecoration,
+          child: TextFormField(
+            controller: userName,
+            decoration: invisible_input_decoration('Введите ФИО'),)), 
           SizedBox(height: 4.h,),
-          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите номер телефона'),)), 
+          Container(
+            height: 6.h,
+            decoration: text_field_boxdecoration,
+            child: TextFormField(
+              controller: userNumber,
+              decoration: invisible_input_decoration('Введите номер телефона'),)), 
           SizedBox(height: 2.h,),
-          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите почту'),)), 
+          Container(height: 6.h,
+          decoration: text_field_boxdecoration,
+          child: TextFormField(
+            controller: userEmail,
+            decoration: invisible_input_decoration('Введите почту'),)), 
           SizedBox(height: 4.h,),
-          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите пароль'),)), 
+          Container(height: 6.h,
+          decoration: text_field_boxdecoration,
+          child: TextFormField(
+            controller: userPassword,
+            decoration: invisible_input_decoration('Введите пароль'),)), 
           SizedBox(height: 2.h,),
-          Container(height: 6.h,decoration: text_field_boxdecoration,child: TextFormField(decoration: invisible_input_decoration('Введите повторно пароль'),)), 
+          Container(height: 6.h,
+          decoration: text_field_boxdecoration,
+          child: TextFormField(
+            controller: userSecondPassword,
+            decoration: invisible_input_decoration('Введите повторно пароль'),)), 
           SizedBox(height: 4.h,),
           Container(
             height: 6.h,
