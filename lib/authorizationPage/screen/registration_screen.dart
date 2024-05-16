@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:rent_car_app/core/globals.dart';
+import 'package:rent_car_app/core/routes.gr.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
+import 'package:rent_car_app/main.dart';
+import 'package:rent_car_app/main/home_page.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:sizer/sizer.dart';
@@ -16,6 +20,13 @@ class RegistrationScreen extends StatelessWidget {
     TextEditingController userEmail = TextEditingController();
     TextEditingController userPassword = TextEditingController();
     TextEditingController userSecondPassword = TextEditingController();
+    void register() async {
+    try{
+    authService.signUpWithEmailAndPassword(userEmail.text, userPassword.text);
+    } catch (e) {
+      talker.error('firebase registration error');
+    }
+  }
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -78,7 +89,9 @@ class RegistrationScreen extends StatelessWidget {
             height: 6.h,
             width: 80.w,
             decoration: button_grey_decoration,
-            child: TextButton(onPressed: (){},
+            child: TextButton(onPressed: (){
+              AutoRouter.of(context).push(const HomeRoute());
+              register();},
             child: Text('Зарегистрироваться',
             style: Theme.of(context).textTheme.titleMedium,)),)
           ],

@@ -9,5 +9,12 @@ class UserModel{
       UserCredential userCredential = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       return userCredential;
   }
+  Future<UserCredential> signUpWithEmailAndPassword(String email, String password) async{
+    UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+    return userCredential;
+  }
+  Future<void> signOut() async{
+    return await FirebaseAuth.instance.signOut();
+  }
 
 }
