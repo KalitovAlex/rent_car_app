@@ -15,6 +15,7 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 void main() {
   initDependencies();
+  initSingletons();
   runApp(const MyApp());
 }
 void initSingletons(){

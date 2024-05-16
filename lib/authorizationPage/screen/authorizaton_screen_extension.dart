@@ -3,5 +3,6 @@ extension on _AuthorizaitonScreenState{
   void auth (){
     gia.email = emailController.text;
     gia.password = passwordController.text;
+    gia.authorization();
   }
 }
