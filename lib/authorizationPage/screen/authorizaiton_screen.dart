@@ -32,9 +32,11 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
           showLoadingCircle(context);
         }
         if(state is AuthLoaded){
+          Navigator.of(context).pop();
           AutoRouter.of(context).push(const HomeRoute());
         }
         if(state is AuthFailure){
+          Navigator.of(context).pop();
           showSnackBar(context, 'Не правильная почта или пароль');
           talker.error('Error wrong mail and pass or other error');
         }

@@ -6,6 +6,6 @@ abstract class AbstractUserModel {
   String? number;
   String? email;
   String? password;
-  Future<void> authorization();
+  Future<bool> authorization();
   Future<bool> registration();
   }
