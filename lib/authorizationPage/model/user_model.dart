@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 
-class UserModel{
+class UserModel extends AbstractUserModel{
   // instance of auth
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
