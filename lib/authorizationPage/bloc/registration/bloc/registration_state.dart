@@ -1,6 +1,6 @@
 part of 'registration_bloc.dart';
-
-class RegistrationState {}
+@immutable
+sealed class RegistrationState {}
 
 final class RegistrationInitial extends RegistrationState {}
 final class RegistrationLoading extends RegistrationState{}

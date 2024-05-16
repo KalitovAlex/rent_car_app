@@ -26,9 +26,9 @@ class UserModel extends AbstractUserModel{
       await Dio().post(
         'http://5.42.220.228/api/users', data: {
           "username": this.username,
-          "email": this.email,
           "name": this.name,
           "phone_number": this.number,
+          "email": this.email,
           "password": this.password
         }
       );

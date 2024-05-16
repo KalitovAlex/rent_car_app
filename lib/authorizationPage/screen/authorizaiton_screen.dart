@@ -36,6 +36,7 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
         }
         if(state is AuthFailure){
           showSnackBar(context, 'Не правильная почта или пароль');
+          talker.error('Error wrong mail and pass or other error');
         }
         return Scaffold(
           body: SingleChildScrollView(

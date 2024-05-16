@@ -30,6 +30,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   TextEditingController userSecondPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final bloccommand = BlocProvider.of<RegistrationBloc>(context);
     return BlocProvider(
       create: (context) => RegistrationBloc(),
       child: BlocBuilder<RegistrationBloc, RegistrationState>(
@@ -39,6 +40,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           }
           if(state is RegistrationLoaded){
             showSnackBar(context, "Вы успешно зарегестрировались");
+            AutoRouter.of(context).push(const HomeRoute());
           }
           if(state is RegistrationFailure){
             showSnackBar(context, "Не удалось зарегестрироваться");
@@ -136,8 +138,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     decoration: button_grey_decoration,
                     child: TextButton(
                         onPressed: () {
-                          if (userPassword == userSecondPassword) {
+                          if (userPassword.text == userSecondPassword.text) {
                             register();
+                            bloccommand.add(RegistrationEvent());
                           } else {
                             showSnackBar(context, 'Введите одинаковые пароли');
                           }

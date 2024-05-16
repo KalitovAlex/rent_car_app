@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
+import 'package:rent_car_app/authorizationPage/bloc/registration/bloc/registration_bloc.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/authorizationPage/model/user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
@@ -54,7 +55,8 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AuthBloc())
+          create: (context) => AuthBloc()),
+        BlocProvider(create: (context) => RegistrationBloc())
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) {
