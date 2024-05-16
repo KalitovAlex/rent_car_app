@@ -8,6 +8,7 @@ import 'package:rent_car_app/helper/adaptive_helper.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:rent_car_app/widget/loading_circle.dart';
+import 'package:rent_car_app/widget/snack_bar.dart';
 import 'package:sizer/sizer.dart';
 part 'authorizaton_screen_extension.dart';
 
@@ -34,7 +35,7 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
           AutoRouter.of(context).push(const HomeRoute());
         }
         if(state is AuthFailure){
-          
+          showSnackBar(context, 'Не правильная почта или пароль');
         }
         return Scaffold(
           body: SingleChildScrollView(
