@@ -18,6 +18,7 @@ abstract class AbstractUserModel {
 
   // Methods
   Future<UserCredential> signInWithEmailAndPassword(String email, String password);
+  Future<void> createUser();
 
   // toMap method
   Map<String, dynamic> toMap() {

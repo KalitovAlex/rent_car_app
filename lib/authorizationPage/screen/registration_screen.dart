@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.gr.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
@@ -19,12 +20,8 @@ class RegistrationScreen extends StatelessWidget {
     TextEditingController userEmail = TextEditingController();
     TextEditingController userPassword = TextEditingController();
     TextEditingController userSecondPassword = TextEditingController();
-    void register() async {
-    try{
-    authService.signUpWithEmailAndPassword(userEmail.text, userPassword.text);
-    } catch (e) {
-      talker.error('firebase registration error');
-    }
+    void register(){
+    gI<AbstractUserModel>().createUser;
   }
     return Scaffold(
       body: Container(
@@ -90,6 +87,11 @@ class RegistrationScreen extends StatelessWidget {
             decoration: button_grey_decoration,
             child: TextButton(onPressed: (){
               AutoRouter.of(context).push(const HomeRoute());
+              gI<AbstractUserModel>().userEmail = userEmail.text;
+              gI<AbstractUserModel>().userPassword = userPassword.text;
+              gI<AbstractUserModel>().userLogin = userLogin.text;
+              gI<AbstractUserModel>().userPhoneNumber = userNumber.text;
+              gI<AbstractUserModel>().userName = userName.text;
               register();},
             child: Text('Зарегистрироваться',
             style: Theme.of(context).textTheme.titleMedium,)),)

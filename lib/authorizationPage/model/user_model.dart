@@ -27,5 +27,6 @@ class UserModel extends AbstractUserModel{
     await db.collection('Users').add(gI<AbstractUserModel>().toMap()).whenComplete(() => talker.log('Success')).catchError((error){
       talker.error(error.toString());
     });
+    
   }
 }
