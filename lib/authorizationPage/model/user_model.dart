@@ -1,10 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/main.dart';
-import 'package:talker_flutter/talker_flutter.dart';
 
 class UserModel extends AbstractUserModel{
   // instance of auth
@@ -27,6 +24,6 @@ class UserModel extends AbstractUserModel{
     await db.collection('Users').add(gI<AbstractUserModel>().toMap()).whenComplete(() => talker.log('Success')).catchError((error){
       talker.error(error.toString());
     });
-    
+
   }
 }

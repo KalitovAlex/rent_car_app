@@ -20,9 +20,9 @@ class RegistrationScreen extends StatelessWidget {
     TextEditingController userEmail = TextEditingController();
     TextEditingController userPassword = TextEditingController();
     TextEditingController userSecondPassword = TextEditingController();
-    void register(){
+    void register() {
     gI<AbstractUserModel>().createUser;
-  }
+    }
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
