@@ -7,4 +7,5 @@ abstract class AbstractUserModel {
   String? email;
   String? password;
   Future<void> authorization();
+  Future<void> registration();
   }
