@@ -6,6 +6,7 @@ import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/authorizationPage/model/user_model.dart';
 import 'package:rent_car_app/authorizationPage/screen/authorizaiton_screen.dart';
+import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.dart';
 import 'package:rent_car_app/theme/theme.dart';
 import 'package:sizer/sizer.dart';
@@ -23,9 +24,7 @@ void main() {
 void initSingletons() {
   GetIt.I.registerLazySingleton<AbstractUserModel>(() => UserModel());
 }
-
 void initDependencies() {
-  final talker = TalkerFlutter.init();
   GetIt.I.registerSingleton<Talker>(talker);
   final talkerDioLogger = TalkerDioLogger(talker: talker);
   final dio = Dio();
