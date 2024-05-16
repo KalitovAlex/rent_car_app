@@ -4,7 +4,7 @@ void showLoadingCircle(context){
   showDialog(
     barrierDismissible: false,
     builder: (context){
-      return Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     },
     context: context,
   );

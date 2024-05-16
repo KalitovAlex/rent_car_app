@@ -5,6 +5,7 @@ import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
 
 class UserModel extends AbstractUserModel{
+  @override
   Future<bool> authorization()async{
     try{
     final response = await Dio().get(
@@ -21,6 +22,7 @@ class UserModel extends AbstractUserModel{
       return false;
     }
   }
+  @override
   Future<bool> registration() async{
     try{
       await Dio().post(
