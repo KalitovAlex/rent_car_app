@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/authorizationPage/model/user_model.dart';
 import 'package:rent_car_app/authorizationPage/screen/authorizaiton_screen.dart';
@@ -18,29 +19,26 @@ void main() {
   initSingletons();
   runApp(const MyApp());
 }
-void initSingletons(){
-GetIt.I.registerLazySingleton<AbstractUserModel>(() => UserModel());
+
+void initSingletons() {
+  GetIt.I.registerLazySingleton<AbstractUserModel>(() => UserModel());
 }
-void initDependencies(){
+
+void initDependencies() {
   final talker = TalkerFlutter.init();
   GetIt.I.registerSingleton<Talker>(talker);
-  final talkerDioLogger = TalkerDioLogger(
-    talker: talker
-  );
+  final talkerDioLogger = TalkerDioLogger(talker: talker);
   final dio = Dio();
   dio.interceptors.add(talkerDioLogger);
   talker.info('App Started');
   Bloc.observer = TalkerBlocObserver(
-    talker: talker,
-    settings: const TalkerBlocLoggerSettings(
-      printCreations: true,
-      printClosings: true,
-      printStateFullData: true,
-      printChanges: true,
-      printEventFullData: true
-    )
-  );
-
+      talker: talker,
+      settings: const TalkerBlocLoggerSettings(
+          printCreations: true,
+          printClosings: true,
+          printStateFullData: true,
+          printChanges: true,
+          printEventFullData: true));
 }
 
 class MyApp extends StatefulWidget {
@@ -54,16 +52,21 @@ class _MyAppState extends State<MyApp> {
   final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp.router(
-        theme: theme,
-        debugShowCheckedModeBanner: false,
-        routerConfig: _appRouter.config(
-          navigatorObservers: () =>  [TalkerRouteObserver(GetIt.I<Talker>())]
-        ),
-      );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AuthBloc())
+      ],
+      child: Sizer(
+        builder: (context, orientation, deviceType) {
+          return MaterialApp.router(
+            theme: theme,
+            debugShowCheckedModeBanner: false,
+            routerConfig: _appRouter.config(
+                navigatorObservers: () =>
+                    [TalkerRouteObserver(GetIt.I<Talker>())]),
+          );
+        },
+      ),
     );
   }
 }
