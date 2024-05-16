@@ -9,7 +9,7 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
   RegistrationBloc() : super(RegistrationInitial()) {
     on<RegistrationEvent>((event, emit) {
       emit(RegistrationLoading());
-      final bool response = gia.registration() as bool;
+      dynamic response = gia.registration() ;
       if(response == true){
         emit(RegistrationLoaded());
       }
