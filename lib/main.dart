@@ -5,7 +5,6 @@ import 'package:get_it/get_it.dart';
 import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/authorizationPage/model/user_model.dart';
-import 'package:rent_car_app/authorizationPage/screen/authorizaiton_screen.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.dart';
 import 'package:rent_car_app/theme/theme.dart';
@@ -16,6 +15,7 @@ import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   initDependencies();
   initSingletons();
   runApp(const MyApp());
@@ -53,7 +53,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AuthBloc())
+        BlocProvider(
+          create: (context) => AuthBloc())
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) {
