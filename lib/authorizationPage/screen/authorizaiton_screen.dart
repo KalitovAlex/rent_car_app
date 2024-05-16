@@ -31,7 +31,10 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
           showLoadingCircle(context);
         }
         if(state is AuthLoaded){
-          // AutoRoute(page: Home)
+          AutoRouter.of(context).push(const HomeRoute());
+        }
+        if(state is AuthFailure){
+          
         }
         return Scaffold(
           body: SingleChildScrollView(
