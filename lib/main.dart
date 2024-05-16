@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
+import 'package:rent_car_app/authorizationPage/model/user_model.dart';
 import 'package:rent_car_app/authorizationPage/screen/authorizaiton_screen.dart';
 import 'package:rent_car_app/core/routes.dart';
 import 'package:rent_car_app/theme/theme.dart';
@@ -16,7 +18,7 @@ void main() {
   runApp(const MyApp());
 }
 void initSingletons(){
-
+GetIt.I.registerLazySingleton<AbstractUserModel>(() => UserModel());
 }
 void initDependencies(){
   final talker = TalkerFlutter.init();
