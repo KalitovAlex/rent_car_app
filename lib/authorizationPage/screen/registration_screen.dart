@@ -4,7 +4,6 @@ import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.gr.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
-import 'package:rent_car_app/main.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:sizer/sizer.dart';
