@@ -10,7 +10,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial())  {
     on<AuthEvent>((event, emit) async{
       emit(AuthLoading());
-      dynamic response = gia.authorization();
+      bool response = await gia.authorization();
       await gia.authorization().whenComplete (() => response == true ? emit(AuthLoaded()) : emit(AuthFailure()));
     });
   }
