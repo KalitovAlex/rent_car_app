@@ -7,15 +7,10 @@ part 'registration_state.dart';
 
 class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
   RegistrationBloc() : super(RegistrationInitial()) {
-    on<RegistrationEvent>((event, emit) {
+    on<RegistrationEvent>((event, emit) async{
       emit(RegistrationLoading());
-      dynamic response = gia.registration() ;
-      if(response == true){
-        emit(RegistrationLoaded());
-      }
-      else{
-        emit(RegistrationFailure());
-      }
+      bool response = await gia.registration() ;
+      await gia.registration().whenComplete(() => response == true ? emit(RegistrationLoaded()) : emit(RegistrationFailure()));
     });
   }
 }

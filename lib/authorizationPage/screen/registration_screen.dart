@@ -30,21 +30,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     final bloccommand = BlocProvider.of<RegistrationBloc>(context);
-    return BlocProvider(
-      create: (context) => RegistrationBloc(),
-      child: BlocBuilder<RegistrationBloc, RegistrationState>(
-        builder: (context, state) {
+      return BlocConsumer<RegistrationBloc, RegistrationState>(
+        listener: (BuildContext context, RegistrationState state) { 
           if(state is RegistrationLoading){
             showLoadingCircle(context);
           }
           if(state is RegistrationLoaded){
-            showSnackBar(context, "Вы успешно зарегестрировались");
-            AutoRouter.of(context).push(const HomeRoute());
+            Navigator.of(context).pop();
+            AutoRouter.of(context).push(const AuthorizaitonRoute());
           }
           if(state is RegistrationFailure){
-            showSnackBar(context, "Не удалось зарегестрироваться");
-            talker.error('Registration failed');
+            Navigator.of(context).pop();
+            talker.error('Error');
           }
+         },
+        builder: (context, state) {
           return Scaffold(
             body: Container(
               decoration: const BoxDecoration(
@@ -154,7 +154,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
           );
         },
-      ),
-    );
+      );
   }
 }
