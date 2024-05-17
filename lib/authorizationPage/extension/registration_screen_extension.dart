@@ -6,7 +6,6 @@ void register (){
   gia.name = userLogin.text;
   gia.number = userLogin.text;
   gia.password = userLogin.text;
-  gia.registration();
 }
 }
 
