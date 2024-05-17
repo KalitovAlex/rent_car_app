@@ -26,8 +26,8 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
   @override
   Widget build(BuildContext context) {
     final bloccommand = BlocProvider.of<AuthBloc>(context);
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: (BuildContext context, AuthState state) {  
         if(state is AuthLoading){
           showLoadingCircle(context);
         }
@@ -40,6 +40,8 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
           showSnackBar(context, 'Не правильная почта или пароль');
           talker.error('Error wrong mail and pass or other error');
         }
+      },
+      builder: (context, state) {
         return Scaffold(
           body: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
