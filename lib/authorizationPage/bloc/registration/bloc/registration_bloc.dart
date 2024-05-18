@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
 import 'package:rent_car_app/core/globals.dart';
 
 part 'registration_event.dart';
