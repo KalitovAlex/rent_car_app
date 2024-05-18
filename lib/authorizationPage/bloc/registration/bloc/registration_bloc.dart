@@ -11,10 +11,7 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
       emit(RegistrationLoading());
       try{
       bool response = await gia.registration();
-      if(response) {
-        emit(RegistrationLoaded());
-      }
-      else{emit(RegistrationFailure());}
+      response == true ? emit(RegistrationLoaded()) : emit(RegistrationFailure());
       } catch(e){
         talker.error(e.toString());
       }
