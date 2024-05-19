@@ -3,13 +3,12 @@
 import 'package:dio/dio.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
-
 class UserModel extends AbstractUserModel{
   @override
   Future<bool> authorization()async{
     try{
     final response = await Dio().get(
-      'http://5.42.220.228/api/users?email=${this.email}&password=${this.password}'
+      'http://$ip/api/users?email=${this.email}&password=${this.password}'
     );
     final data = response.data as Map<String, dynamic>;
     this.name = data["name"];
@@ -26,7 +25,7 @@ class UserModel extends AbstractUserModel{
   Future<bool> registration() async{
     try{
       await Dio().post(
-        'http://5.42.220.228/api/users', data: {
+        'http://$ip/api/users', data: {
           "username": this.username,
           "name": this.name,
           "phone_number": this.number,
