@@ -5,7 +5,7 @@ import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
 class UserModel extends AbstractUserModel{
   @override
-  Future<bool> authorization()async{
+  Future<bool> authorization() async{
     try{
     final response = await Dio().get(
       'http://$ip/api/users?email=${this.email}&password=${this.password}'

@@ -9,9 +9,13 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial())  {
     on<AuthEvent>((event, emit) async{
+      try{ 
       emit(AuthLoading());
       bool response = await gia.authorization();
-      await gia.authorization().whenComplete (() => response == true ? emit(AuthLoaded()) : emit(AuthFailure()));
+      response == true ? emit(AuthLoaded()) : AuthFailure();
+      } catch (e){
+        talker.error(e);
+      }
     });
   }
 }
