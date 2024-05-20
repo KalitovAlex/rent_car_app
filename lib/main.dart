@@ -22,7 +22,7 @@ void main() {
 }
 
 void initSingletons() {
-  GetIt.I.registerLazySingleton<UsersModel>(() => UsersModel());
+  GetIt.I.registerLazySingleton(() => const UsersModel());
 }
 void initDependencies() {
   GetIt.I.registerSingleton<Talker>(talker);
