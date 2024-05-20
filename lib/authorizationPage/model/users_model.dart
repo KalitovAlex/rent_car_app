@@ -1,6 +1,4 @@
-import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dart:convert';
 
 part 'users_model.freezed.dart';
 part 'users_model.g.dart';
