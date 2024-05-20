@@ -21,15 +21,15 @@ UsersModel _$UsersModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UsersModel {
   @JsonKey(name: "username")
-  String get username => throw _privateConstructorUsedError;
+  dynamic get username => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
-  String get name => throw _privateConstructorUsedError;
+  dynamic get name => throw _privateConstructorUsedError;
   @JsonKey(name: "phone_number")
-  String get phoneNumber => throw _privateConstructorUsedError;
+  dynamic get phoneNumber => throw _privateConstructorUsedError;
   @JsonKey(name: "email")
-  String get email => throw _privateConstructorUsedError;
+  dynamic get email => throw _privateConstructorUsedError;
   @JsonKey(name: "password")
-  String get password => throw _privateConstructorUsedError;
+  dynamic get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,11 +44,11 @@ abstract class $UsersModelCopyWith<$Res> {
       _$UsersModelCopyWithImpl<$Res, UsersModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: "username") String username,
-      @JsonKey(name: "name") String name,
-      @JsonKey(name: "phone_number") String phoneNumber,
-      @JsonKey(name: "email") String email,
-      @JsonKey(name: "password") String password});
+      {@JsonKey(name: "username") dynamic username,
+      @JsonKey(name: "name") dynamic name,
+      @JsonKey(name: "phone_number") dynamic phoneNumber,
+      @JsonKey(name: "email") dynamic email,
+      @JsonKey(name: "password") dynamic password});
 }
 
 /// @nodoc
@@ -64,33 +64,33 @@ class _$UsersModelCopyWithImpl<$Res, $Val extends UsersModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = null,
-    Object? name = null,
-    Object? phoneNumber = null,
-    Object? email = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? name = freezed,
+    Object? phoneNumber = freezed,
+    Object? email = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as dynamic,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
+              as dynamic,
+      phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as dynamic,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
+              as dynamic,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -104,11 +104,11 @@ abstract class _$$UsersModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "username") String username,
-      @JsonKey(name: "name") String name,
-      @JsonKey(name: "phone_number") String phoneNumber,
-      @JsonKey(name: "email") String email,
-      @JsonKey(name: "password") String password});
+      {@JsonKey(name: "username") dynamic username,
+      @JsonKey(name: "name") dynamic name,
+      @JsonKey(name: "phone_number") dynamic phoneNumber,
+      @JsonKey(name: "email") dynamic email,
+      @JsonKey(name: "password") dynamic password});
 }
 
 /// @nodoc
@@ -122,33 +122,18 @@ class __$$UsersModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = null,
-    Object? name = null,
-    Object? phoneNumber = null,
-    Object? email = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? name = freezed,
+    Object? phoneNumber = freezed,
+    Object? email = freezed,
+    Object? password = freezed,
   }) {
     return _then(_$UsersModelImpl(
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
+      username: freezed == username ? _value.username! : username,
+      name: freezed == name ? _value.name! : name,
+      phoneNumber: freezed == phoneNumber ? _value.phoneNumber! : phoneNumber,
+      email: freezed == email ? _value.email! : email,
+      password: freezed == password ? _value.password! : password,
     ));
   }
 }
@@ -156,31 +141,31 @@ class __$$UsersModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UsersModelImpl implements _UsersModel {
-  const _$UsersModelImpl(
-      {@JsonKey(name: "username") required this.username,
-      @JsonKey(name: "name") required this.name,
-      @JsonKey(name: "phone_number") required this.phoneNumber,
-      @JsonKey(name: "email") required this.email,
-      @JsonKey(name: "password") required this.password});
+  _$UsersModelImpl(
+      {@JsonKey(name: "username") this.username = null,
+      @JsonKey(name: "name") this.name = null,
+      @JsonKey(name: "phone_number") this.phoneNumber = null,
+      @JsonKey(name: "email") this.email = null,
+      @JsonKey(name: "password") this.password = null});
 
   factory _$UsersModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UsersModelImplFromJson(json);
 
   @override
   @JsonKey(name: "username")
-  final String username;
+  final dynamic username;
   @override
   @JsonKey(name: "name")
-  final String name;
+  final dynamic name;
   @override
   @JsonKey(name: "phone_number")
-  final String phoneNumber;
+  final dynamic phoneNumber;
   @override
   @JsonKey(name: "email")
-  final String email;
+  final dynamic email;
   @override
   @JsonKey(name: "password")
-  final String password;
+  final dynamic password;
 
   @override
   String toString() {
@@ -192,20 +177,23 @@ class _$UsersModelImpl implements _UsersModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsersModelImpl &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, username, name, phoneNumber, email, password);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
@@ -222,32 +210,31 @@ class _$UsersModelImpl implements _UsersModel {
 }
 
 abstract class _UsersModel implements UsersModel {
-  const factory _UsersModel(
-          {@JsonKey(name: "username") required final String username,
-          @JsonKey(name: "name") required final String name,
-          @JsonKey(name: "phone_number") required final String phoneNumber,
-          @JsonKey(name: "email") required final String email,
-          @JsonKey(name: "password") required final String password}) =
-      _$UsersModelImpl;
+  factory _UsersModel(
+      {@JsonKey(name: "username") final dynamic username,
+      @JsonKey(name: "name") final dynamic name,
+      @JsonKey(name: "phone_number") final dynamic phoneNumber,
+      @JsonKey(name: "email") final dynamic email,
+      @JsonKey(name: "password") final dynamic password}) = _$UsersModelImpl;
 
   factory _UsersModel.fromJson(Map<String, dynamic> json) =
       _$UsersModelImpl.fromJson;
 
   @override
   @JsonKey(name: "username")
-  String get username;
+  dynamic get username;
   @override
   @JsonKey(name: "name")
-  String get name;
+  dynamic get name;
   @override
   @JsonKey(name: "phone_number")
-  String get phoneNumber;
+  dynamic get phoneNumber;
   @override
   @JsonKey(name: "email")
-  String get email;
+  dynamic get email;
   @override
   @JsonKey(name: "password")
-  String get password;
+  dynamic get password;
   @override
   @JsonKey(ignore: true)
   _$$UsersModelImplCopyWith<_$UsersModelImpl> get copyWith =>
