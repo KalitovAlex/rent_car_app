@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
 import 'package:rent_car_app/authorizationPage/bloc/registration/bloc/registration_bloc.dart';
-import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
+import 'package:rent_car_app/authorizationPage/model/users_model.dart';
 import 'package:rent_car_app/authorizationPage/model/user_model.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.dart';
@@ -23,7 +23,6 @@ void main() {
 }
 
 void initSingletons() {
-  GetIt.I.registerLazySingleton<AbstractUserModel>(() => UserModel());
 }
 void initDependencies() {
   GetIt.I.registerSingleton<Talker>(talker);

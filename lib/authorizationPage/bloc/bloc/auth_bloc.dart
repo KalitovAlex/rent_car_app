@@ -11,8 +11,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthEvent>((event, emit) async{
       try{ 
       emit(AuthLoading());
-      bool response = await gia.authorization();
-      response == true ? emit(AuthLoaded()) : AuthFailure();
       } catch (e){
         talker.error(e);
       }
