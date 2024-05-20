@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'users_model.dart';
+part of 'abstract_users_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-UsersModel _$UsersModelFromJson(Map<String, dynamic> json) {
-  return _UsersModel.fromJson(json);
+AbstractusersModel _$AbstractusersModelFromJson(Map<String, dynamic> json) {
+  return _AbstractusersModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$UsersModel {
+mixin _$AbstractusersModel {
   @JsonKey(name: "username")
   String get username => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
@@ -33,15 +33,15 @@ mixin _$UsersModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UsersModelCopyWith<UsersModel> get copyWith =>
+  $AbstractusersModelCopyWith<AbstractusersModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UsersModelCopyWith<$Res> {
-  factory $UsersModelCopyWith(
-          UsersModel value, $Res Function(UsersModel) then) =
-      _$UsersModelCopyWithImpl<$Res, UsersModel>;
+abstract class $AbstractusersModelCopyWith<$Res> {
+  factory $AbstractusersModelCopyWith(
+          AbstractusersModel value, $Res Function(AbstractusersModel) then) =
+      _$AbstractusersModelCopyWithImpl<$Res, AbstractusersModel>;
   @useResult
   $Res call(
       {@JsonKey(name: "username") String username,
@@ -52,9 +52,9 @@ abstract class $UsersModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UsersModelCopyWithImpl<$Res, $Val extends UsersModel>
-    implements $UsersModelCopyWith<$Res> {
-  _$UsersModelCopyWithImpl(this._value, this._then);
+class _$AbstractusersModelCopyWithImpl<$Res, $Val extends AbstractusersModel>
+    implements $AbstractusersModelCopyWith<$Res> {
+  _$AbstractusersModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,11 +96,11 @@ class _$UsersModelCopyWithImpl<$Res, $Val extends UsersModel>
 }
 
 /// @nodoc
-abstract class _$$UsersModelImplCopyWith<$Res>
-    implements $UsersModelCopyWith<$Res> {
-  factory _$$UsersModelImplCopyWith(
-          _$UsersModelImpl value, $Res Function(_$UsersModelImpl) then) =
-      __$$UsersModelImplCopyWithImpl<$Res>;
+abstract class _$$AbstractusersModelImplCopyWith<$Res>
+    implements $AbstractusersModelCopyWith<$Res> {
+  factory _$$AbstractusersModelImplCopyWith(_$AbstractusersModelImpl value,
+          $Res Function(_$AbstractusersModelImpl) then) =
+      __$$AbstractusersModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$UsersModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UsersModelImplCopyWithImpl<$Res>
-    extends _$UsersModelCopyWithImpl<$Res, _$UsersModelImpl>
-    implements _$$UsersModelImplCopyWith<$Res> {
-  __$$UsersModelImplCopyWithImpl(
-      _$UsersModelImpl _value, $Res Function(_$UsersModelImpl) _then)
+class __$$AbstractusersModelImplCopyWithImpl<$Res>
+    extends _$AbstractusersModelCopyWithImpl<$Res, _$AbstractusersModelImpl>
+    implements _$$AbstractusersModelImplCopyWith<$Res> {
+  __$$AbstractusersModelImplCopyWithImpl(_$AbstractusersModelImpl _value,
+      $Res Function(_$AbstractusersModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$UsersModelImplCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$UsersModelImpl(
+    return _then(_$AbstractusersModelImpl(
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -155,16 +155,16 @@ class __$$UsersModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersModelImpl implements _UsersModel {
-  const _$UsersModelImpl(
+class _$AbstractusersModelImpl implements _AbstractusersModel {
+  const _$AbstractusersModelImpl(
       {@JsonKey(name: "username") this.username = '',
       @JsonKey(name: "name") this.name = '',
       @JsonKey(name: "phone_number") this.phoneNumber = '',
       @JsonKey(name: "email") this.email = '',
       @JsonKey(name: "password") this.password = ''});
 
-  factory _$UsersModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersModelImplFromJson(json);
+  factory _$AbstractusersModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AbstractusersModelImplFromJson(json);
 
   @override
   @JsonKey(name: "username")
@@ -184,14 +184,14 @@ class _$UsersModelImpl implements _UsersModel {
 
   @override
   String toString() {
-    return 'UsersModel(username: $username, name: $name, phoneNumber: $phoneNumber, email: $email, password: $password)';
+    return 'AbstractusersModel(username: $username, name: $name, phoneNumber: $phoneNumber, email: $email, password: $password)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersModelImpl &&
+            other is _$AbstractusersModelImpl &&
             (identical(other.username, username) ||
                 other.username == username) &&
             (identical(other.name, name) || other.name == name) &&
@@ -210,27 +210,29 @@ class _$UsersModelImpl implements _UsersModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UsersModelImplCopyWith<_$UsersModelImpl> get copyWith =>
-      __$$UsersModelImplCopyWithImpl<_$UsersModelImpl>(this, _$identity);
+  _$$AbstractusersModelImplCopyWith<_$AbstractusersModelImpl> get copyWith =>
+      __$$AbstractusersModelImplCopyWithImpl<_$AbstractusersModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UsersModelImplToJson(
+    return _$$AbstractusersModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _UsersModel implements UsersModel {
-  const factory _UsersModel(
-      {@JsonKey(name: "username") final String username,
-      @JsonKey(name: "name") final String name,
-      @JsonKey(name: "phone_number") final String phoneNumber,
-      @JsonKey(name: "email") final String email,
-      @JsonKey(name: "password") final String password}) = _$UsersModelImpl;
+abstract class _AbstractusersModel implements AbstractusersModel {
+  const factory _AbstractusersModel(
+          {@JsonKey(name: "username") final String username,
+          @JsonKey(name: "name") final String name,
+          @JsonKey(name: "phone_number") final String phoneNumber,
+          @JsonKey(name: "email") final String email,
+          @JsonKey(name: "password") final String password}) =
+      _$AbstractusersModelImpl;
 
-  factory _UsersModel.fromJson(Map<String, dynamic> json) =
-      _$UsersModelImpl.fromJson;
+  factory _AbstractusersModel.fromJson(Map<String, dynamic> json) =
+      _$AbstractusersModelImpl.fromJson;
 
   @override
   @JsonKey(name: "username")
@@ -249,6 +251,6 @@ abstract class _UsersModel implements UsersModel {
   String get password;
   @override
   @JsonKey(ignore: true)
-  _$$UsersModelImplCopyWith<_$UsersModelImpl> get copyWith =>
+  _$$AbstractusersModelImplCopyWith<_$AbstractusersModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
