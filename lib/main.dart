@@ -33,6 +33,8 @@ void initDependencies() {
     printRequestHeaders: true,
     printResponseHeaders: true,
     printResponseMessage: true,
+    printRequestData: true,
+    printResponseData: true,
   ));
   final dio = Dio();
   dio.interceptors.add(talkerDioLogger);
