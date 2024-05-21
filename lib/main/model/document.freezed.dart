@@ -21,7 +21,7 @@ Document _$DocumentFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Document {
   @JsonKey(name: "name")
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: "birth_date")
   DateTime? get birthDate => throw _privateConstructorUsedError;
   @JsonKey(name: "date_of_issue")
@@ -29,15 +29,15 @@ mixin _$Document {
   @JsonKey(name: "end_date")
   DateTime? get endDate => throw _privateConstructorUsedError;
   @JsonKey(name: "issued_by")
-  String get issuedBy => throw _privateConstructorUsedError;
+  String? get issuedBy => throw _privateConstructorUsedError;
   @JsonKey(name: "number")
-  String get number => throw _privateConstructorUsedError;
+  String? get number => throw _privateConstructorUsedError;
   @JsonKey(name: "where_issued")
-  String get whereIssued => throw _privateConstructorUsedError;
+  String? get whereIssued => throw _privateConstructorUsedError;
   @JsonKey(name: "categories")
-  String get categories => throw _privateConstructorUsedError;
+  String? get categories => throw _privateConstructorUsedError;
   @JsonKey(name: "user_id")
-  int get userId => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,15 +51,15 @@ abstract class $DocumentCopyWith<$Res> {
       _$DocumentCopyWithImpl<$Res, Document>;
   @useResult
   $Res call(
-      {@JsonKey(name: "name") String name,
+      {@JsonKey(name: "name") String? name,
       @JsonKey(name: "birth_date") DateTime? birthDate,
       @JsonKey(name: "date_of_issue") DateTime? dateOfIssue,
       @JsonKey(name: "end_date") DateTime? endDate,
-      @JsonKey(name: "issued_by") String issuedBy,
-      @JsonKey(name: "number") String number,
-      @JsonKey(name: "where_issued") String whereIssued,
-      @JsonKey(name: "categories") String categories,
-      @JsonKey(name: "user_id") int userId});
+      @JsonKey(name: "issued_by") String? issuedBy,
+      @JsonKey(name: "number") String? number,
+      @JsonKey(name: "where_issued") String? whereIssued,
+      @JsonKey(name: "categories") String? categories,
+      @JsonKey(name: "user_id") int? userId});
 }
 
 /// @nodoc
@@ -75,21 +75,21 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? birthDate = freezed,
     Object? dateOfIssue = freezed,
     Object? endDate = freezed,
-    Object? issuedBy = null,
-    Object? number = null,
-    Object? whereIssued = null,
-    Object? categories = null,
-    Object? userId = null,
+    Object? issuedBy = freezed,
+    Object? number = freezed,
+    Object? whereIssued = freezed,
+    Object? categories = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
@@ -102,26 +102,26 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      issuedBy: null == issuedBy
+      issuedBy: freezed == issuedBy
           ? _value.issuedBy
           : issuedBy // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
+              as String?,
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      whereIssued: null == whereIssued
+              as String?,
+      whereIssued: freezed == whereIssued
           ? _value.whereIssued
           : whereIssued // ignore: cast_nullable_to_non_nullable
-              as String,
-      categories: null == categories
+              as String?,
+      categories: freezed == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
+              as String?,
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -135,15 +135,15 @@ abstract class _$$DocumentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "name") String name,
+      {@JsonKey(name: "name") String? name,
       @JsonKey(name: "birth_date") DateTime? birthDate,
       @JsonKey(name: "date_of_issue") DateTime? dateOfIssue,
       @JsonKey(name: "end_date") DateTime? endDate,
-      @JsonKey(name: "issued_by") String issuedBy,
-      @JsonKey(name: "number") String number,
-      @JsonKey(name: "where_issued") String whereIssued,
-      @JsonKey(name: "categories") String categories,
-      @JsonKey(name: "user_id") int userId});
+      @JsonKey(name: "issued_by") String? issuedBy,
+      @JsonKey(name: "number") String? number,
+      @JsonKey(name: "where_issued") String? whereIssued,
+      @JsonKey(name: "categories") String? categories,
+      @JsonKey(name: "user_id") int? userId});
 }
 
 /// @nodoc
@@ -157,21 +157,21 @@ class __$$DocumentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? birthDate = freezed,
     Object? dateOfIssue = freezed,
     Object? endDate = freezed,
-    Object? issuedBy = null,
-    Object? number = null,
-    Object? whereIssued = null,
-    Object? categories = null,
-    Object? userId = null,
+    Object? issuedBy = freezed,
+    Object? number = freezed,
+    Object? whereIssued = freezed,
+    Object? categories = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_$DocumentImpl(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
@@ -184,26 +184,26 @@ class __$$DocumentImplCopyWithImpl<$Res>
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      issuedBy: null == issuedBy
+      issuedBy: freezed == issuedBy
           ? _value.issuedBy
           : issuedBy // ignore: cast_nullable_to_non_nullable
-              as String,
-      number: null == number
+              as String?,
+      number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      whereIssued: null == whereIssued
+              as String?,
+      whereIssued: freezed == whereIssued
           ? _value.whereIssued
           : whereIssued // ignore: cast_nullable_to_non_nullable
-              as String,
-      categories: null == categories
+              as String?,
+      categories: freezed == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
+              as String?,
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -212,22 +212,22 @@ class __$$DocumentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DocumentImpl implements _Document {
   _$DocumentImpl(
-      {@JsonKey(name: "name") this.name = '',
+      {@JsonKey(name: "name") this.name,
       @JsonKey(name: "birth_date") this.birthDate,
       @JsonKey(name: "date_of_issue") this.dateOfIssue,
       @JsonKey(name: "end_date") this.endDate,
-      @JsonKey(name: "issued_by") this.issuedBy = '',
-      @JsonKey(name: "number") this.number = '',
-      @JsonKey(name: "where_issued") this.whereIssued = '',
-      @JsonKey(name: "categories") this.categories = '',
-      @JsonKey(name: "user_id") this.userId = 0});
+      @JsonKey(name: "issued_by") this.issuedBy,
+      @JsonKey(name: "number") this.number,
+      @JsonKey(name: "where_issued") this.whereIssued,
+      @JsonKey(name: "categories") this.categories,
+      @JsonKey(name: "user_id") this.userId});
 
   factory _$DocumentImpl.fromJson(Map<String, dynamic> json) =>
       _$$DocumentImplFromJson(json);
 
   @override
   @JsonKey(name: "name")
-  final String name;
+  final String? name;
   @override
   @JsonKey(name: "birth_date")
   final DateTime? birthDate;
@@ -239,19 +239,19 @@ class _$DocumentImpl implements _Document {
   final DateTime? endDate;
   @override
   @JsonKey(name: "issued_by")
-  final String issuedBy;
+  final String? issuedBy;
   @override
   @JsonKey(name: "number")
-  final String number;
+  final String? number;
   @override
   @JsonKey(name: "where_issued")
-  final String whereIssued;
+  final String? whereIssued;
   @override
   @JsonKey(name: "categories")
-  final String categories;
+  final String? categories;
   @override
   @JsonKey(name: "user_id")
-  final int userId;
+  final int? userId;
 
   @override
   String toString() {
@@ -300,22 +300,22 @@ class _$DocumentImpl implements _Document {
 
 abstract class _Document implements Document {
   factory _Document(
-      {@JsonKey(name: "name") final String name,
+      {@JsonKey(name: "name") final String? name,
       @JsonKey(name: "birth_date") final DateTime? birthDate,
       @JsonKey(name: "date_of_issue") final DateTime? dateOfIssue,
       @JsonKey(name: "end_date") final DateTime? endDate,
-      @JsonKey(name: "issued_by") final String issuedBy,
-      @JsonKey(name: "number") final String number,
-      @JsonKey(name: "where_issued") final String whereIssued,
-      @JsonKey(name: "categories") final String categories,
-      @JsonKey(name: "user_id") final int userId}) = _$DocumentImpl;
+      @JsonKey(name: "issued_by") final String? issuedBy,
+      @JsonKey(name: "number") final String? number,
+      @JsonKey(name: "where_issued") final String? whereIssued,
+      @JsonKey(name: "categories") final String? categories,
+      @JsonKey(name: "user_id") final int? userId}) = _$DocumentImpl;
 
   factory _Document.fromJson(Map<String, dynamic> json) =
       _$DocumentImpl.fromJson;
 
   @override
   @JsonKey(name: "name")
-  String get name;
+  String? get name;
   @override
   @JsonKey(name: "birth_date")
   DateTime? get birthDate;
@@ -327,19 +327,19 @@ abstract class _Document implements Document {
   DateTime? get endDate;
   @override
   @JsonKey(name: "issued_by")
-  String get issuedBy;
+  String? get issuedBy;
   @override
   @JsonKey(name: "number")
-  String get number;
+  String? get number;
   @override
   @JsonKey(name: "where_issued")
-  String get whereIssued;
+  String? get whereIssued;
   @override
   @JsonKey(name: "categories")
-  String get categories;
+  String? get categories;
   @override
   @JsonKey(name: "user_id")
-  int get userId;
+  int? get userId;
   @override
   @JsonKey(ignore: true)
   _$$DocumentImplCopyWith<_$DocumentImpl> get copyWith =>

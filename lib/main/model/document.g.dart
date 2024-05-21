@@ -8,7 +8,7 @@ part of 'document.dart';
 
 _$DocumentImpl _$$DocumentImplFromJson(Map<String, dynamic> json) =>
     _$DocumentImpl(
-      name: json['name'] as String? ?? '',
+      name: json['name'] as String?,
       birthDate: json['birth_date'] == null
           ? null
           : DateTime.parse(json['birth_date'] as String),
@@ -18,11 +18,11 @@ _$DocumentImpl _$$DocumentImplFromJson(Map<String, dynamic> json) =>
       endDate: json['end_date'] == null
           ? null
           : DateTime.parse(json['end_date'] as String),
-      issuedBy: json['issued_by'] as String? ?? '',
-      number: json['number'] as String? ?? '',
-      whereIssued: json['where_issued'] as String? ?? '',
-      categories: json['categories'] as String? ?? '',
-      userId: (json['user_id'] as num?)?.toInt() ?? 0,
+      issuedBy: json['issued_by'] as String?,
+      number: json['number'] as String?,
+      whereIssued: json['where_issued'] as String?,
+      categories: json['categories'] as String?,
+      userId: (json['user_id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$DocumentImplToJson(_$DocumentImpl instance) =>

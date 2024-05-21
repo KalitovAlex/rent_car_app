@@ -37,6 +37,8 @@ class MyCarScreen extends StatelessWidget {
               ],),
             ),
             SizedBox(height: 2.h,),
+            Center(child: Text('Мои документы', style: Theme.of(context).textTheme.titleLarge,)),
+            SizedBox(height: 2.h,),
             Container(
               decoration: info_container_decoration,
               height: 45.h,

@@ -7,7 +7,7 @@ part 'document.g.dart';
 class Document with _$Document {
     factory Document({
         @JsonKey(name: "name")
-        @Default('') String name,
+        String? name,
         @JsonKey(name: "birth_date")
         DateTime? birthDate,
         @JsonKey(name: "date_of_issue")
@@ -15,15 +15,15 @@ class Document with _$Document {
         @JsonKey(name: "end_date")
         DateTime? endDate,
         @JsonKey(name: "issued_by")
-        @Default('') String issuedBy,
+        String? issuedBy,
         @JsonKey(name: "number")
-        @Default('') String number,
+        String? number,
         @JsonKey(name: "where_issued")
-        @Default('') String whereIssued,
+        String? whereIssued,
         @JsonKey(name: "categories")
-        @Default('') String categories,
+        String? categories,
         @JsonKey(name: "user_id")
-        @Default(0) int userId,
+        int? userId,
     }) = _Document;
 
     factory Document.fromJson(Map<String, dynamic> json) => _$DocumentFromJson(json);
