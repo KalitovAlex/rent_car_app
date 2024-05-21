@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
+import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:sizer/sizer.dart';
@@ -31,9 +32,19 @@ class MyCarScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
               decoration: info_container_decoration,
-              height: 45.h,
+              height: 60.h,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                Text('Марка', style: Theme.of(context).textTheme.titleSmall)
+                myCarScreenRow(context, 'Марка', 'Rolls-royce'),
+                myCarScreenRow(context, 'Модель', 'Phantom'),
+                myCarScreenRow(context, 'Двигатель', '6.8 литров \n 460 л.с \n Бензин'),
+                myCarScreenRow(context, 'Год выпуска', '2012'),
+                myCarScreenRow(context, 'Цвет', 'Черный'),
+                myCarScreenRow(context, 'Кузов', 'Купе'),
+                myCarScreenRow(context, 'Комплектация', 'Стандарт'),
+                myCarScreenRow(context, 'Коробка', 'Автомат'),
+                myCarScreenRow(context, 'привод', 'Задний'),
+                myCarScreenRow(context, 'Руль', 'Левый'),
+                myCarScreenRow(context, 'VIN - номер', '1N4DL01DXWC257013')
               ],),
             ),
             SizedBox(height: 2.h,),
@@ -41,7 +52,7 @@ class MyCarScreen extends StatelessWidget {
             SizedBox(height: 2.h,),
             Container(
               decoration: info_container_decoration,
-              height: 45.h,
+              height: 60.h,
             )
 
           ],
