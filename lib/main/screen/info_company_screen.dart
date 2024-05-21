@@ -14,6 +14,7 @@ class InfoCompanyScreen extends StatelessWidget {
         child: Column(
           children: [
             Text('Hign Wheels-официальный диллер люксовых автомобилей в России',style: Theme.of(context).textTheme.titleLarge,textAlign: TextAlign.center,),
+            SizedBox(height: 2.h,),
             Image.asset('assets/png/info_company_image.png'),
             SizedBox(height: 2.h,),
             Image.asset('assets/png/info.png'),
