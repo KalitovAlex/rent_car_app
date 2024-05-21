@@ -15,4 +15,15 @@ class UserRepository {
       return false;
     }
   }
+  Future<bool> registration() async {
+    try{
+      await Dio().post(
+        'http://$ip/api/users', data: userModel.toJson()
+      );
+      return true;
+    } catch (e){
+      talker.error(e);
+      return false;
+    }
+  }
 }

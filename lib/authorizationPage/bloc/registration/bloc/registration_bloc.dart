@@ -10,6 +10,8 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     on<RegistrationEvent>((event, emit) async{
       emit(RegistrationLoading());
       try{
+        final response = await userRepository.registration();
+        response == true ? emit(RegistrationLoaded()) : emit(RegistrationFailure());
       } catch(e){
         talker.error(e.toString());
       }
