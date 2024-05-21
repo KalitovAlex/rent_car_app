@@ -23,9 +23,15 @@ boxShadow: [
 ]
 );
 // ignore: non_constant_identifier_names
-BoxDecoration image_container_decoration = BoxDecoration(
-  borderRadius: BorderRadius.circular(30),
-  border: Border.all(
-    
-  )
+BoxDecoration info_container_decoration = BoxDecoration(
+  borderRadius: BorderRadius.circular(10),
+  color: Colors.white,
+  boxShadow: const [
+    BoxShadow(
+      color: Colors.grey,
+      offset: Offset(0, 4),
+      blurRadius: 10
+    )
+
+  ]
 );
