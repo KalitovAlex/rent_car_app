@@ -33,7 +33,7 @@ class MyCarScreen extends StatelessWidget {
               decoration: info_container_decoration,
               height: 45.h,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                Text('Марка', style: Theme.of(context).textTheme.titleMedium)
+                Text('Марка', style: Theme.of(context).textTheme.titleSmall)
               ],),
             ),
             SizedBox(height: 2.h,),

@@ -22,6 +22,11 @@ final theme = ThemeData(
       color: Colors.black,
       fontSize: 25,
       fontWeight: FontWeight.w500
+    ),
+    titleSmall: TextStyle(
+      color: Colors.black,
+      fontSize: 18,
+      fontWeight: FontWeight.w500
     )
   ),
 );
