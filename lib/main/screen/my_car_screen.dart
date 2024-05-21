@@ -19,7 +19,7 @@ class MyCarScreen extends StatelessWidget {
               width: width(context),
               height: 30.h,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(100),
+                borderRadius: BorderRadius.circular(80),
                 child: Image.asset('assets/png/background_car.jpeg',fit: BoxFit.fill,),
               ),
             ),
