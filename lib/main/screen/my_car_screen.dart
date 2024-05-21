@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
+import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:sizer/sizer.dart';
 
@@ -9,7 +10,7 @@ class MyCarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 145, 179, 240),
+      backgroundColor: backgroundColor,
       body: Container(
         padding: EdgeInsets.only(left: 5.w,right: 5.w),
         child:  ListView(
