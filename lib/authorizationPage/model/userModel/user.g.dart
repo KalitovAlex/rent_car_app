@@ -1,14 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'abstract_users_model.dart';
+part of 'user.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AbstractUsersModelImpl _$$AbstractUsersModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AbstractUsersModelImpl(
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       username: json['username'] as String? ?? '',
       name: json['name'] as String? ?? '',
       phoneNumber: json['phone_number'] as String? ?? '',
@@ -16,8 +14,7 @@ _$AbstractUsersModelImpl _$$AbstractUsersModelImplFromJson(
       password: json['password'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$AbstractUsersModelImplToJson(
-        _$AbstractUsersModelImpl instance) =>
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
     <String, dynamic>{
       'username': instance.username,
       'name': instance.name,

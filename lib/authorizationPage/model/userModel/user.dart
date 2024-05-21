@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'abstract_users_model.freezed.dart';
-part 'abstract_users_model.g.dart';
+part 'user.freezed.dart';
+part 'user.g.dart';
 
 @freezed
-class AbstractUsersModel with _$AbstractUsersModel {
-        factory AbstractUsersModel({
+class User with _$User {
+    const factory User({
         @JsonKey(name: "username")
         @Default('') String username,
         @JsonKey(name: "name")
@@ -16,9 +16,8 @@ class AbstractUsersModel with _$AbstractUsersModel {
         @Default('') String email,
         @JsonKey(name: "password")
         @Default('') String password,
-    }) = _AbstractUsersModel;
+    }) = _User;
 
-    factory AbstractUsersModel.fromJson(Map<String, dynamic> json) => _$AbstractUsersModelFromJson(json);
+    factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
-
 
