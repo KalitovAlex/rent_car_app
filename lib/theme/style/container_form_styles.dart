@@ -22,3 +22,10 @@ boxShadow: [
   )
 ]
 );
+// ignore: non_constant_identifier_names
+BoxDecoration image_container_decoration = BoxDecoration(
+  borderRadius: BorderRadius.circular(30),
+  border: Border.all(
+    
+  )
+);
