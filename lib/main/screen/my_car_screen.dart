@@ -11,9 +11,8 @@ class MyCarScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 145, 179, 240),
       body: Container(
-        padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
-        child:  Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        padding: EdgeInsets.only(left: 5.w,right: 5.w),
+        child:  ListView(
           children: [
             SizedBox(
               width: width(context),
@@ -27,6 +26,11 @@ class MyCarScreen extends StatelessWidget {
               color: Color.fromARGB(255, 42, 107, 246),
               fontSize: 16,
             ),)),
+            SizedBox(height: 2.h,),
+            Container(
+              decoration: info_container_decoration,
+              height: 30.h,
+            ),
             SizedBox(height: 2.h,),
             Container(
               decoration: info_container_decoration,
