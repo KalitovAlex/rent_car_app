@@ -29,12 +29,12 @@ class MyCarScreen extends StatelessWidget {
             SizedBox(height: 2.h,),
             Container(
               decoration: info_container_decoration,
-              height: 30.h,
+              height: 45.h,
             ),
             SizedBox(height: 2.h,),
             Container(
               decoration: info_container_decoration,
-              height: 30.h,
+              height: 45.h,
             )
 
           ],
