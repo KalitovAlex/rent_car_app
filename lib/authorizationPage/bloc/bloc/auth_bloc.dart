@@ -11,6 +11,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthEvent>((event, emit) async{
       try{ 
       emit(AuthLoading());
+      final response = await userRepository.authorization();
+      response == true ? emit(AuthLoaded()) : emit(AuthFailure());
       } catch (e){
         talker.error(e);
       }
