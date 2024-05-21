@@ -29,15 +29,21 @@ void initSingletons() {
 }
 void initDependencies() {
   GetIt.I.registerSingleton<Talker>(talker);
-  final talkerDioLogger = TalkerDioLogger(talker: talker, settings: const TalkerDioLoggerSettings(
-    printRequestHeaders: true,
-    printResponseHeaders: true,
-    printResponseMessage: true,
-    printRequestData: true,
-    printResponseData: true,
-  ));
-  final dio = Dio();
-  dio.interceptors.add(talkerDioLogger);
+final dio = Dio();
+dio.interceptors.add(
+    TalkerDioLogger(
+        settings: const TalkerDioLoggerSettings(
+          // All http responses enabled for console logging
+          printResponseData: true,
+          // All http requests disabled for console logging
+          printRequestData: false,
+          // Reposnse logs including http - headers
+          printResponseHeaders: true,
+          // Request logs without http - headersa
+          printRequestHeaders: false,
+        ),
+    ),
+);
   talker.info('App Started');
   Bloc.observer = TalkerBlocObserver(
       talker: talker,
