@@ -12,6 +12,7 @@ import 'package:rent_car_app/theme/theme.dart';
 import 'package:sizer/sizer.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_observer.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_settings.dart';
+import 'package:talker_dio_logger/talker_dio_logger.dart';
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -28,7 +29,11 @@ void initSingletons() {
 }
 void initDependencies() {
   GetIt.I.registerSingleton<Talker>(talker);
-  final talkerDioLogger = TalkerDioLogger(talker: talker);
+  final talkerDioLogger = TalkerDioLogger(talker: talker, settings: const TalkerDioLoggerSettings(
+    printRequestHeaders: true,
+    printResponseHeaders: true,
+    printResponseMessage: true,
+  ));
   final dio = Dio();
   dio.interceptors.add(talkerDioLogger);
   talker.info('App Started');
