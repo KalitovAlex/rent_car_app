@@ -10,7 +10,7 @@ class UserRepository implements AbstractUserRepository{
       'http://$ip/api/users?email=${userModel.email}&password=${userModel.password}'
       );
       final responseData = response.data as Map<String,dynamic>;
-      userModel = userModel.copyWith(name: responseData['name'] , phoneNumber: responseData['phone_number'], username: responseData['username']);
+      userModel = userModel.copyWith(name: responseData['name'] , phoneNumber: responseData['phone_number'], username: responseData['username'],id: responseData['id']);
       return true;
     } catch (e){
       talker.error(e);

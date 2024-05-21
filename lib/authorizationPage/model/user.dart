@@ -16,6 +16,8 @@ class User with _$User {
         @Default('') String email,
         @JsonKey(name: "password")
         @Default('') String password,
+        @JsonKey(name: 'id')
+        @Default(0) int id
     }) = _User;
 
     factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
