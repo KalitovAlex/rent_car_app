@@ -3,6 +3,7 @@ import 'package:rent_car_app/authorizationPage/repository/abstract_user_reposito
 import 'package:rent_car_app/core/globals.dart';
 
 class UserRepository implements AbstractUserRepository{
+  @override
   Future<bool> authorization() async{
     try{
       final response = await Dio().get(
@@ -16,6 +17,7 @@ class UserRepository implements AbstractUserRepository{
       return false;
     }
   }
+  @override
   Future<bool> registration() async {
     try{
       await Dio().post(
