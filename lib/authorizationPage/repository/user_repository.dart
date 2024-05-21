@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:rent_car_app/authorizationPage/repository/abstract_user_repository.dart';
 import 'package:rent_car_app/core/globals.dart';
 
-class UserRepository {
+class UserRepository implements AbstractUserRepository{
   Future<bool> authorization() async{
     try{
       final response = await Dio().get(
