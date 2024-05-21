@@ -28,8 +28,12 @@ class MyCarScreen extends StatelessWidget {
             ),)),
             SizedBox(height: 2.h,),
             Container(
+              padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
               decoration: info_container_decoration,
               height: 45.h,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
+                Text('Марка', style: Theme.of(context).textTheme.titleMedium)
+              ],),
             ),
             SizedBox(height: 2.h,),
             Container(
