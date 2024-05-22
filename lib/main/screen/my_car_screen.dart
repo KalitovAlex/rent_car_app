@@ -56,11 +56,25 @@ class MyCarScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
               decoration: info_container_decoration,
-              height: 60.h,
+              height: 52.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  myCarScreenRow(context, '', '')
+                  myCarScreenRow(context, 'ФИО', 'Калитов \n Александр \n Андреевич'),
+                  myCarScreenRow(context, 'Дата рождения и\nместо', '07.07.2007 \n  Г.Владимир'),
+                  myCarScreenRow(context, 'Дата выдачи', '30.05.2021'),
+                  myCarScreenRow(context, 'Дата окончания', '02.02.2030'),
+                  myCarScreenRow(context, 'Кем выдан', 'ГИБДД'),
+                  myCarScreenRow(context, 'Номер', '9937674310'),
+                  myCarScreenRow(context, 'Где выдан', 'Московская область'),
+                  myCarScreenRow(context, 'Категория',  'B/B1/M'),
+                  SizedBox(height: 2.h,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SizedBox(width: 30.w,height: 5.h,child: FloatingActionButton(onPressed: (){}, child: Text('Изменить', style: Theme.of(context).textTheme.titleSmall,),)),
+                    ],
+                  )
                 ],
               ),
             )

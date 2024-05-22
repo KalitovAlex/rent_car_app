@@ -11,6 +11,7 @@ class UserRepository implements AbstractUserRepository{
       );
       final responseData = response.data as Map<String,dynamic>;
       userModel = userModel.copyWith(name: responseData['name'] , phoneNumber: responseData['phone_number'], username: responseData['username'],id: responseData['id']);
+      talker.log(responseData.toString());
       return true;
     } catch (e){
       talker.error(e);
