@@ -7,12 +7,12 @@ part of 'user.dart';
 // **************************************************************************
 
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
-      username: json['username'] as String? ?? '',
-      name: json['name'] as String? ?? '',
-      phoneNumber: json['phone_number'] as String? ?? '',
-      email: json['email'] as String? ?? '',
-      password: json['password'] as String? ?? '',
-      id: (json['id'] as num?)?.toInt() ?? 0,
+      username: json['username'] as String?,
+      name: json['name'] as String?,
+      phoneNumber: json['phone_number'] as String?,
+      email: json['email'] as String?,
+      password: json['password'] as String?,
+      id: (json['id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
