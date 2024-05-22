@@ -24,10 +24,13 @@ class MyCarScreen extends StatelessWidget {
                 child: Image.asset('assets/png/background_car.jpeg',fit: BoxFit.fill,),
               ),
             ),
-            TextButton(onPressed: (){ }, child: const Text('Редактировать фото',style: TextStyle(
-              color: Color.fromARGB(255, 42, 107, 246),
-              fontSize: 16,
-            ),)),
+            SizedBox(
+              width: 20.w,
+              child: TextButton(onPressed: (){ }, child: const Text('Редактировать фото',style: TextStyle(
+                color: Color.fromARGB(255, 42, 107, 246),
+                fontSize: 16,
+              ),)),
+            ),
             SizedBox(height: 2.h,),
             Container(
               padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
@@ -51,6 +54,7 @@ class MyCarScreen extends StatelessWidget {
             Center(child: Text('Мои документы', style: Theme.of(context).textTheme.titleLarge,)),
             SizedBox(height: 2.h,),
             Container(
+              padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
               decoration: info_container_decoration,
               height: 60.h,
               child: Column(
