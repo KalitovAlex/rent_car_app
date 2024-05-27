@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:rent_car_app/authorizationPage/model/user.dart';
 import 'package:rent_car_app/authorizationPage/repository/abstract_user_repository.dart';
 import 'package:rent_car_app/core/globals.dart';
 
@@ -10,7 +11,7 @@ class UserRepository implements AbstractUserRepository{
       'http://$ip/api/users?email=${userModel.email}&password=${userModel.password}'
       );
       final responseData = response.data as Map<String,dynamic>;
-      userModel = userModel.copyWith(name: responseData['name'] , phoneNumber: responseData['phone_number'], username: responseData['username'],id: responseData['id']);
+      userModel = User.fromJson(responseData);
       talker.log(responseData.toString());
       return true;
     } catch (e){
