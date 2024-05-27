@@ -16,9 +16,11 @@ class UserModel extends AbstractUserModel{
     UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
     return userCredential;
   }
+  @override
   Future<void> signOut() async{
     return await FirebaseAuth.instance.signOut();
   }
+  @override
   Future<void> createUser() async{
     // ignore: body_might_complete_normally_catch_error
     await db.collection('Users').add(gI<AbstractUserModel>().toMap()).whenComplete(() => talker.log('Success')).catchError((error){
