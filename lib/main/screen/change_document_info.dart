@@ -7,6 +7,7 @@ import '../../helper/adaptive_helper.dart';
 import '../../theme/style/container_form_styles.dart';
 import '../../theme/style/text_form_styles.dart';
 import '../widget/car_text_decoration.dart';
+part '../extensions/change_document_info_extensions.dart';
 @RoutePage()
 class ChangeDocumentInfo extends StatefulWidget {
   const ChangeDocumentInfo({super.key});
@@ -16,14 +17,14 @@ class ChangeDocumentInfo extends StatefulWidget {
 }
 
 class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
-    TextEditingController dateBirthController = TextEditingController();
-    TextEditingController dateGiveController = TextEditingController();
-    TextEditingController dateExpiredController = TextEditingController();
-    TextEditingController nameController = TextEditingController();
-    TextEditingController whoGiveController = TextEditingController();
-    TextEditingController documentNumberController = TextEditingController();
-    TextEditingController whenGiveController = TextEditingController();
-    TextEditingController categoriesController = TextEditingController();
+    var dateBirthController = TextEditingController();
+    var dateGiveController = TextEditingController();
+    var dateExpiredController = TextEditingController();
+    var nameController = TextEditingController();
+    var whoGiveController = TextEditingController();
+    var documentNumberController = TextEditingController();
+    var whenGiveController = TextEditingController();
+    var categoriesController = TextEditingController();
       @override
     void initState() {
       super.initState();
@@ -105,7 +106,6 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                         decoration: button_black_decoration,
                         child: TextButton(onPressed: () {
                          if(nameController.text != null && nameController.text != userModel.name && dateBirthController.text.toString() != documentModel.birthDate.toString() && dateBirthController.text != null && dateGiveController.text.toString() != documentModel.dateOfIssue && dateGiveController.text != null && dateExpiredController.text.toString() != documentModel.endDate.toString() && dateExpiredController.text != null && whoGiveController.text != documentModel.issuedBy && whenGiveController.text != '' && documentNumberController.text != documentModel.number && documentNumberController.text != '' && whenGiveController.text != documentModel.whereIssued && whenGiveController.text != '' && categoriesController.text != documentModel.categories && categoriesController.text != ''){
-                          
                          }
                         }, child: Text('Изменить', style: Theme.of(context).textTheme.labelMedium,)),
                       ),
