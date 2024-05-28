@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
@@ -5,6 +6,8 @@ import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../core/routes.gr.dart';
 
 class MyCarScreen extends StatefulWidget {
   const MyCarScreen({super.key});
@@ -95,6 +98,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(width: 30.w,height: 5.h,child: FloatingActionButton(onPressed: (){
+                        AutoRouter.of(context).push(const ChangeDocumentInfo());
 
                       }, child: Text('Изменить', style: Theme.of(context).textTheme.titleSmall,),)),
                     ],
