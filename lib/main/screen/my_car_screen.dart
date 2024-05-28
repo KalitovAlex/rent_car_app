@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
 import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
@@ -60,14 +61,14 @@ class MyCarScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  myCarScreenRow(context, 'ФИО', 'Калитов \n Александр \n Андреевич'),
-                  myCarScreenRow(context, 'Дата рождения и\nместо', '07.07.2007 \n  Г.Владимир'),
-                  myCarScreenRow(context, 'Дата выдачи', '30.05.2021'),
-                  myCarScreenRow(context, 'Дата окончания', '02.02.2030'),
-                  myCarScreenRow(context, 'Кем выдан', 'ГИБДД'),
-                  myCarScreenRow(context, 'Номер', '9937674310'),
-                  myCarScreenRow(context, 'Где выдан', 'Московская область'),
-                  myCarScreenRow(context, 'Категория',  'B/B1/M'),
+                  myCarScreenRow(context, 'ФИО', documentModel.name ?? ''),
+                  myCarScreenRow(context, 'Дата рождения и\nместо', documentModel.birthDate ?? ''),
+                  myCarScreenRow(context, 'Дата выдачи', documentModel.dateOfIssue ?? ''),
+                  myCarScreenRow(context, 'Дата окончания', documentModel.endDate ?? ''),
+                  myCarScreenRow(context, 'Кем выдан', documentModel.issuedBy ?? ''),
+                  myCarScreenRow(context, 'Номер', documentModel.number ?? ''),
+                  myCarScreenRow(context, 'Где выдан', documentModel.whereIssued ?? ''),
+                  myCarScreenRow(context, 'Категория',  documentModel.categories ?? ''),
                   SizedBox(height: 2.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
