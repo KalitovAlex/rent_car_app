@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 import '../../theme/style/container_form_styles.dart';
 import '../../theme/style/text_form_styles.dart';
 
-Widget carDateDecoration(String name,BuildContext context,String hint, TextEditingController controler,Future<void> selectdate){
+Widget carDateDecoration(String name,BuildContext context,String hint, TextEditingController controler,Future<void> Function(TextEditingController dateController) selectdate){
   return Column(
     children: [
     Text(name,style: Theme.of(context).textTheme.titleSmall,),

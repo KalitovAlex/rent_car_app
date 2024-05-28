@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
+import 'package:rent_car_app/main/widget/car_date_decoration.dart';
 import 'package:rent_car_app/main/widget/car_text_decoration.dart';
 import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
+import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:sizer/sizer.dart';
 
 part '../extensions/my_car_extensions.dart';
@@ -21,6 +23,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
     TextEditingController documentNumberController = TextEditingController();
     TextEditingController whenGiveController = TextEditingController();
     TextEditingController categoriesController = TextEditingController();
+    TextEditingController dateontrolller  = TextEditingController();
     @override
     void initState() {
       super.initState();
@@ -108,8 +111,11 @@ class _MyCarScreenState extends State<MyCarScreen> {
       ),
     );
   }
-  Future<void> _selectDate() async{
-    await showDatePicker(context: context, firstDate: DateTime.now(), lastDate: DateTime(2000));
+  Future<void> _selectDate(TextEditingController dateController) async{
+   DateTime? _picked =  await showDatePicker(context: context, firstDate: DateTime.now(), lastDate: DateTime(2000));
+   if(_picked != null){
+    dateController.text =  _picked.toString().split(" ")[0];
+   }
 
   }
 }

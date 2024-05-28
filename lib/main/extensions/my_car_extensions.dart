@@ -19,10 +19,11 @@ extension on _MyCarScreenState {
                   children: [
                     Align(child: Text('Изменить данные', style: Theme.of(context).textTheme.titleMedium,),),
                     carTextDecoration('ФИО', nameController, context),
-                    carTextDecoration('Кем выдан', whoGiveController, context),
+                    carDateDecoration('Дата', context, 'дата', dateontrolller, _selectDate),
+                      Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration('Дата'), controller: dateontrolller,readOnly: true, onTap: () => _selectDate(dateontrolller))),
                     carTextDecoration('Номер', documentNumberController, context),
                     carTextDecoration('Где выдан', whenGiveController, context),
-                    carTextDecoration('Категория', categoriesController, context)
+                    carTextDecoration('Категория', categoriesController, context),
                   ],
                 ),
               ),
