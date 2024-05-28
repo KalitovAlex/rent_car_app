@@ -11,11 +11,20 @@ class DocumentRepository extends AbstractDocumentRepository{
   //   }
   // }
 
-  // @override
-  // Future<bool> getDocument() {
-  //   // TODO: implement getDocument
-  //   throw UnimplementedError();
-  // }
+  @override
+  Future<bool> getDocument() async{
+    try{
+      final response = await Dio().get(
+        'http://$ip/api/documents?user_email=${userModel.id}'
+      );
+      final responseData = response.data;
+      documentModel = Document.fromJson(responseData);
+      return true;
+    } catch(e){
+      talker.log(e);
+      return false;
+    }
+  }
 
   @override
   Future<bool> makeDocument() async{
@@ -26,7 +35,7 @@ class DocumentRepository extends AbstractDocumentRepository{
         "user_id" : userModel.id
       }
     );
-    final responseData = response.data;
+    final responseData = response.data as Map<String, dynamic>;
     documentModel = Document.fromJson(responseData);
     return true;
     } catch(e){
