@@ -6,6 +6,7 @@ import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:sizer/sizer.dart';
 
+part '../extensions/my_car_extensions.dart';
 class MyCarScreen extends StatelessWidget {
   const MyCarScreen({super.key});
 
