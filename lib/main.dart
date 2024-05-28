@@ -9,6 +9,9 @@ import 'package:rent_car_app/authorizationPage/repository/abstract_user_reposito
 import 'package:rent_car_app/authorizationPage/repository/user_repository.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.dart';
+import 'package:rent_car_app/main/model/document.dart';
+import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
+import 'package:rent_car_app/main/repository/document_repository.dart';
 import 'package:rent_car_app/theme/theme.dart';
 import 'package:sizer/sizer.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_observer.dart';
@@ -25,7 +28,9 @@ void main() {
 
 void initSingletons() {
   GetIt.I.registerLazySingleton(() => const User());
+  GetIt.I.registerLazySingleton(() => Document());
   GetIt.I.registerLazySingleton<AbstractUserRepository>(() => UserRepository());
+  GetIt.I.registerLazySingleton<AbstractDocumentRepository>(() => DocumentRepository());
 }
 void initDependencies() {
   GetIt.I.registerSingleton<Talker>(talker);

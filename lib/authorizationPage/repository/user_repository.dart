@@ -22,9 +22,12 @@ class UserRepository implements AbstractUserRepository{
   @override
   Future<bool> registration() async {
     try{
-      await Dio().post(
+      final response = await Dio().post(
         'http://$ip/api/users', data: userModel.toJson()
       );
+      final responseData = response.data as Map<String, dynamic>;
+      userModel = User.fromJson(responseData);
+      talker.log(responseData.toString());
       return true;
     } catch (e){
       talker.error(e);

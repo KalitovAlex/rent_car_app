@@ -11,7 +11,10 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
       emit(RegistrationLoading());
       try{
         final response = await userRepository.registration();
-        response == true ? emit(RegistrationLoaded()) : emit(RegistrationFailure());
+        documentModel = documentModel.copyWith(userId: userModel.id, name: userModel.name);
+        final responseDocument = await documentRepository.makeDocument();
+        talker.log(responseDocument);
+        response == true && responseDocument == true ? emit(RegistrationLoaded()) : emit(RegistrationFailure());
       } catch(e){
         talker.error(e.toString());
       }
