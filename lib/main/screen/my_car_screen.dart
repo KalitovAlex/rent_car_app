@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
-import 'package:rent_car_app/main/widget/car_date_decoration.dart';
-import 'package:rent_car_app/main/widget/car_text_decoration.dart';
 import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
-import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:sizer/sizer.dart';
 
-part '../extensions/my_car_extensions.dart';
 class MyCarScreen extends StatefulWidget {
   const MyCarScreen({super.key});
 
@@ -93,12 +89,13 @@ class _MyCarScreenState extends State<MyCarScreen> {
                   myCarScreenRow(context, 'Номер', documentModel.number ?? ''),
                   myCarScreenRow(context, 'Где выдан', documentModel.whereIssued ?? ''),
                   myCarScreenRow(context, 'Категория',  documentModel.categories ?? ''),
+                  TextFormField(onTap: _selectDate,readOnly: true,),
                   SizedBox(height: 2.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(width: 30.w,height: 5.h,child: FloatingActionButton(onPressed: (){
-                        showmodalBottom();
+
                       }, child: Text('Изменить', style: Theme.of(context).textTheme.titleSmall,),)),
                     ],
                   )
@@ -111,11 +108,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
       ),
     );
   }
-  Future<void> _selectDate(TextEditingController dateController) async{
-   DateTime? _picked =  await showDatePicker(context: context, firstDate: DateTime.now(), lastDate: DateTime(2000));
-   if(_picked != null){
-    dateController.text =  _picked.toString().split(" ")[0];
-   }
-
+  void _selectDate() {
+    showDatePicker(context: context, firstDate: DateTime(2000), lastDate: DateTime(2025));
   }
 }
