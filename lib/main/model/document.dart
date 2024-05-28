@@ -18,6 +18,8 @@ class Document with _$Document {
         String? issuedBy,
         @JsonKey(name: "number")
         String? number,
+        @JsonKey(name: "id")
+        int? id,
         @JsonKey(name: "where_issued")
         String? whereIssued,
         @JsonKey(name: "categories")

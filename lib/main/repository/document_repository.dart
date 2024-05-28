@@ -4,12 +4,18 @@ import 'package:rent_car_app/main/model/document.dart';
 import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
 
 class DocumentRepository extends AbstractDocumentRepository{
-  // @override
-  // Future<bool> changeDocument() {
-  //   try{
-  //     dio
-  //   }
-  // }
+  @override
+  Future<bool> changeDocument() async{
+    try{
+      await Dio().put(
+        'http://5.42.220.228/api/documents?id=${documentModel.id}', data: documentModel.toJson()
+        );
+        return true;
+    } catch (e){
+      talker.log(e);
+      return false;
+    }
+  }
 
   @override
   Future<bool> getDocument() async{
