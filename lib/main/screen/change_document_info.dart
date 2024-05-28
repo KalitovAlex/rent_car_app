@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
@@ -106,7 +104,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                         height: 6.h,
                         decoration: button_black_decoration,
                         child: TextButton(onPressed: () {
-                         if(nameController.text != null && nameController.text != userModel.name && dateBirthController.text.toString() != documentModel.birthDate.toString() && dateBirthController.text != null && dateGiveController.text.toString() != documentModel.dateOfIssue && dateGiveController.text != null && dateExpiredController.text.toString() != documentModel.endDate.toString() && dateExpiredController.text != null && whoGiveController.text != documentModel.issuedBy && whenGiveController.text != '' && documentNumberController.text != documentModel.number && documentNumberController.text != '' && whenGiveController.text != documentModel.whereIssued && whenGiveController.text != '' && categoriesController.text != documentModel.toExternalReference && categoriesController.text != ''){
+                         if(nameController.text != null && nameController.text != userModel.name && dateBirthController.text.toString() != documentModel.birthDate.toString() && dateBirthController.text != null && dateGiveController.text.toString() != documentModel.dateOfIssue && dateGiveController.text != null && dateExpiredController.text.toString() != documentModel.endDate.toString() && dateExpiredController.text != null && whoGiveController.text != documentModel.issuedBy && whenGiveController.text != '' && documentNumberController.text != documentModel.number && documentNumberController.text != '' && whenGiveController.text != documentModel.whereIssued && whenGiveController.text != '' && categoriesController.text != documentModel.categories && categoriesController.text != ''){
                           
                          }
                         }, child: Text('Изменить', style: Theme.of(context).textTheme.labelMedium,)),

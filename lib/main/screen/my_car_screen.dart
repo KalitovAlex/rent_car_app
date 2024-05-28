@@ -92,7 +92,6 @@ class _MyCarScreenState extends State<MyCarScreen> {
                   myCarScreenRow(context, 'Номер', documentModel.number ?? ''),
                   myCarScreenRow(context, 'Где выдан', documentModel.whereIssued ?? ''),
                   myCarScreenRow(context, 'Категория',  documentModel.categories ?? ''),
-                  TextFormField(onTap: _selectDate,readOnly: true,),
                   SizedBox(height: 2.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -111,8 +110,5 @@ class _MyCarScreenState extends State<MyCarScreen> {
         ),
       ),
     );
-  }
-  void _selectDate() {
-    showDatePicker(context: context, firstDate: DateTime(2000), lastDate: DateTime(2025));
   }
 }
