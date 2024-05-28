@@ -10,11 +10,11 @@ extension on _MyCarScreenState {
               child: Container(
                 height: height(context),
                 width: width(context),
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(45, 45, 53, 1),
-                  borderRadius: BorderRadius.circular(30)
+                decoration: const BoxDecoration(
+                  color:  Color.fromRGBO(45, 45, 53, 1),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))
                 ),
-                padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 5.h),
+                padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
                 child: Column(
                   children: [
                     Text('ФИО',style: Theme.of(context).textTheme.titleSmall,),
