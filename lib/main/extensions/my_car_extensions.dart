@@ -11,13 +11,18 @@ extension on _MyCarScreenState {
                 height: height(context),
                 width: width(context),
                 decoration: const BoxDecoration(
-                  color:  Color.fromRGBO(45, 45, 53, 1),
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))
                 ),
                 padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('ФИО',style: Theme.of(context).textTheme.titleSmall,),
+                    Align(child: Text('Изменить данные', style: Theme.of(context).textTheme.titleMedium,),),
+                    carTextDecoration('ФИО', nameController, context),
+                    carTextDecoration('Кем выдан', whoGiveController, context),
+                    carTextDecoration('Номер', documentNumberController, context),
+                    carTextDecoration('Где выдан', whenGiveController, context),
+                    carTextDecoration('Категория', categoriesController, context)
                   ],
                 ),
               ),

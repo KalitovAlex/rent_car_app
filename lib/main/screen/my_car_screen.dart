@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
+import 'package:rent_car_app/main/widget/car_text_decoration.dart';
 import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
@@ -15,6 +16,20 @@ class MyCarScreen extends StatefulWidget {
 }
 
 class _MyCarScreenState extends State<MyCarScreen> {
+    TextEditingController nameController = TextEditingController();
+    TextEditingController whoGiveController = TextEditingController();
+    TextEditingController documentNumberController = TextEditingController();
+    TextEditingController whenGiveController = TextEditingController();
+    TextEditingController categoriesController = TextEditingController();
+    @override
+    void initState() {
+      super.initState();
+      nameController.text = documentModel.name!;
+      whoGiveController.text = documentModel.issuedBy!;
+      documentNumberController.text = documentModel.number!;
+      whenGiveController.text = documentModel.whereIssued!;
+      categoriesController.text  = documentModel.categories!;
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
