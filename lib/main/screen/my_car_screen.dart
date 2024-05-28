@@ -7,9 +7,14 @@ import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:sizer/sizer.dart';
 
 part '../extensions/my_car_extensions.dart';
-class MyCarScreen extends StatelessWidget {
+class MyCarScreen extends StatefulWidget {
   const MyCarScreen({super.key});
 
+  @override
+  State<MyCarScreen> createState() => _MyCarScreenState();
+}
+
+class _MyCarScreenState extends State<MyCarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,6 +80,7 @@ class MyCarScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(width: 30.w,height: 5.h,child: FloatingActionButton(onPressed: (){
+                        showmodalBottom();
                       }, child: Text('Изменить', style: Theme.of(context).textTheme.titleSmall,),)),
                     ],
                   )
