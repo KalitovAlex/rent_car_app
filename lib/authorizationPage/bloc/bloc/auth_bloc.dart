@@ -12,7 +12,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try{ 
       emit(AuthLoading());
       final response = await userRepository.authorization();
-      response == true ? emit(AuthLoaded()) : emit(AuthFailure());
+      final responseDocument = await documentRepository.getDocument();
+      response == true && responseDocument == true ? emit(AuthLoaded()) : emit(AuthFailure());
       } catch (e){
         talker.error(e);
       }
