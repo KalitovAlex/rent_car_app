@@ -4,6 +4,7 @@ extension on _MyCarScreenState {
     return showModalBottomSheet(backgroundColor: Colors.transparent,context: context, builder: (BuildContext context){
       return Scaffold(
           body: SingleChildScrollView(
+            physics: const ScrollPhysics(),
             child: SizedBox(
               height: 90.h,
               child: Container(
