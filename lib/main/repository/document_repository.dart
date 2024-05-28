@@ -21,7 +21,10 @@ class DocumentRepository extends AbstractDocumentRepository{
   Future<bool> makeDocument() async{
     try{
     final response = await Dio().post(
-      'http://$ip/api/documents', data: documentModel.toJson()
+      'http://$ip/api/documents', data: {
+        "name": userModel.name,
+        "user_id" : userModel.id
+      }
     );
     final responseData = response.data;
     documentModel = Document.fromJson(responseData);
