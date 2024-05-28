@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
+import 'package:rent_car_app/main/widget/car_date_decoration.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../helper/adaptive_helper.dart';
+import '../../theme/style/container_form_styles.dart';
+import '../../theme/style/text_form_styles.dart';
 import '../widget/car_text_decoration.dart';
 @RoutePage()
 class ChangeDocumentInfo extends StatefulWidget {
@@ -14,6 +17,7 @@ class ChangeDocumentInfo extends StatefulWidget {
 }
 
 class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
+    TextEditingController dateController = TextEditingController();
     TextEditingController nameController = TextEditingController();
     TextEditingController whoGiveController = TextEditingController();
     TextEditingController documentNumberController = TextEditingController();
@@ -30,6 +34,9 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
     }
   @override
   Widget build(BuildContext context) {
+   void selectDate() {
+    showDatePicker(context: context, firstDate: DateTime(1950), lastDate: DateTime(2024));
+  }
     return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -50,6 +57,10 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     carTextDecoration('ФИО', nameController, context),
+                        Text('Дата рождения',style: Theme.of(context).textTheme.titleSmall,),
+                        SizedBox(height: 1.h,),
+                        Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату рождения'), controller: dateController,readOnly: true, onTap: () => selectDate())),
+                        SizedBox(height: 1.h,),
                     carTextDecoration('Кем выдан', whoGiveController, context),
                     carTextDecoration('Номер', documentNumberController, context),
                     carTextDecoration('Где выдан', whenGiveController, context),
