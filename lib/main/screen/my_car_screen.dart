@@ -48,13 +48,6 @@ class _MyCarScreenState extends State<MyCarScreen> {
                 child: Image.asset('assets/png/background_car.jpeg',fit: BoxFit.fill,),
               ),
             ),
-            SizedBox(
-              width: 20.w,
-              child: TextButton(onPressed: (){ }, child: const Text('Редактировать фото',style: TextStyle(
-                color: Color.fromARGB(255, 42, 107, 246),
-                fontSize: 16,
-              ),)),
-            ),
             SizedBox(height: 2.h,),
             Container(
               padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
@@ -80,7 +73,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
             Container(
               padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
               decoration: info_container_decoration,
-              height: 52.h,
+              height: 49.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
