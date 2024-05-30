@@ -29,13 +29,13 @@ class _HomePageState extends State<HomePage> {
               decoration: const BoxDecoration(
                 color: Colors.white,
               ),
-              child: const TabBar(
+              child: TabBar(
                 labelColor: Colors.black,
                 dividerColor: Colors.transparent,
                 tabs: [
-               Tab(child: Text('Мое авто',)),
-               Tab(child: Text('Тест-драйв'),),
-               Tab(child: Text('О компании'),)
+               Tab(child: Text('Мое авто',style: Theme.of(context).textTheme.titleSmall,)),
+               Tab(child: Text('Тест-драйв',style: Theme.of(context).textTheme.titleSmall,),),
+               Tab(child: Text('О компании',style: Theme.of(context).textTheme.titleSmall,),)
               ]),
             ),
             const Expanded(
