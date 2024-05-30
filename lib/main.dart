@@ -38,13 +38,9 @@ final dio = Dio();
 dio.interceptors.add(
     TalkerDioLogger(
         settings: const TalkerDioLoggerSettings(
-          // All http responses enabled for console logging
           printResponseData: true,
-          // All http requests disabled for console logging
           printRequestData: false,
-          // Reposnse logs including http - headers
           printResponseHeaders: true,
-          // Request logs without http - headersa
           printRequestHeaders: false,
         ),
     ),
