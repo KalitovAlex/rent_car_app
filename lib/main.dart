@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:rent_car_app/authorizationPage/bloc/bloc/auth_bloc.dart';
+import 'package:rent_car_app/authorizationPage/bloc/authorization/auth_bloc.dart';
 import 'package:rent_car_app/authorizationPage/bloc/registration/registration_bloc.dart';
 import 'package:rent_car_app/authorizationPage/model/user.dart';
 import 'package:rent_car_app/authorizationPage/repository/abstract_user_repository.dart';

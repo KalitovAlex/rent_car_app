@@ -68,6 +68,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
             title: Text('Изменить данные', style: Theme.of(context).textTheme.titleMedium,),
           ),
           body: SingleChildScrollView(
+            physics: const NeverScrollableScrollPhysics(),
             child: SizedBox(
               height: 90.h,
               child: Container(
@@ -105,8 +106,9 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                         height: 5.5.h,
                         decoration: button_black_decoration,
                         child: TextButton(onPressed: () {
-                         if(nameController.text != null && nameController.text != userModel.name && dateBirthController.text.toString() != documentModel.birthDate.toString() && dateBirthController.text != null && dateGiveController.text.toString() != documentModel.dateOfIssue && dateGiveController.text != null && dateExpiredController.text.toString() != documentModel.endDate.toString() && dateExpiredController.text != null && whoGiveController.text != documentModel.issuedBy && whenGiveController.text != '' && documentNumberController.text != documentModel.number && documentNumberController.text != '' && whenGiveController.text != documentModel.whereIssued && whenGiveController.text != '' && categoriesController.text != documentModel.categories && categoriesController.text != ''){
+                         if(nameController.text.isNotEmpty && dateBirthController.text.isNotEmpty && dateExpiredController.text.isNotEmpty && whenGiveController.text.isNotEmpty&& documentNumberController.text.isNotEmpty&& whenGiveController.text.isNotEmpty&& categoriesController.text.isNotEmpty){
                           changeDocument();
+                          documentRepository.changeDocument();
                          } else{
                           showSnackBar(context, 'Вы неправильно заполнили поля');
                          }

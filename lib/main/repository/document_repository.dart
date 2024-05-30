@@ -7,9 +7,10 @@ class DocumentRepository extends AbstractDocumentRepository{
   @override
   Future<bool> changeDocument() async{
     try{
-      await Dio().put(
+      final response = await Dio().put(
         'http://5.42.220.228/api/documents?id=${documentModel.id}', data: documentModel.toJson()
         );
+      talker.log(response.data);
         return true;
     } catch (e){
       talker.log(e);
@@ -21,7 +22,7 @@ class DocumentRepository extends AbstractDocumentRepository{
   Future<bool> getDocument() async{
     try{
       final response = await Dio().get(
-        'http://$ip/api/documents?user_email=${userModel.id}'
+        'http://$ip/api/documents?user_email=${userModel.email}'
       );
       final responseData = response.data;
       documentModel = Document.fromJson(responseData);

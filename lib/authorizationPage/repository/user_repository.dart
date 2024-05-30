@@ -27,6 +27,7 @@ class UserRepository implements AbstractUserRepository{
       );
       final responseData = response.data as Map<String, dynamic>;
       userModel = User.fromJson(responseData);
+      talker.log(response.data);
       talker.log(responseData.toString());
       return true;
     } catch (e){

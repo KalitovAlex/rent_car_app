@@ -12,6 +12,5 @@ extension on _ChangeDocumentInfoState{
       whereIssued: whenGiveController.text,
       categories: categoriesController.text
       );
-      documentRepository.changeDocument();
   }
 }

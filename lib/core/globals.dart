@@ -5,7 +5,7 @@ import 'package:rent_car_app/main/model/document.dart';
 import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 final talker = TalkerFlutter.init();
-String ip =  '5.42.220.228:80'; 
+String ip =  '147.45.252.218:80'; 
 
 //GetIt init models
 var userModel = GetIt.I<User>();
