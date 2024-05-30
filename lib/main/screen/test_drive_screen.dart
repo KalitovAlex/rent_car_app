@@ -11,14 +11,18 @@ class TestDriveScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Container(
-        padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 5.h),
-        child: Column(
+        padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
+        child:  Column(
           children: [
-          ListView.builder(
-            itemCount: 1,
-            itemBuilder: (BuildContext context, int index) {
-              return testDriveScreenListView();
-            },
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: 1,
+              itemBuilder: (BuildContext context, int index) {
+                return testDriveScreenListView();
+              },
+            ),
           ),
           ],
         ),
