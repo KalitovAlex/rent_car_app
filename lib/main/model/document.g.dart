@@ -9,15 +9,9 @@ part of 'document.dart';
 _$DocumentImpl _$$DocumentImplFromJson(Map<String, dynamic> json) =>
     _$DocumentImpl(
       name: json['name'] as String?,
-      birthDate: json['birth_date'] == null
-          ? null
-          : DateTime.parse(json['birth_date'] as String),
-      dateOfIssue: json['date_of_issue'] == null
-          ? null
-          : DateTime.parse(json['date_of_issue'] as String),
-      endDate: json['end_date'] == null
-          ? null
-          : DateTime.parse(json['end_date'] as String),
+      birthDate: json['birth_date'] as String?,
+      dateOfIssue: json['date_of_issue'] as String?,
+      endDate: json['end_date'] as String?,
       issuedBy: json['issued_by'] as String?,
       number: json['number'] as String?,
       id: (json['id'] as num?)?.toInt(),
@@ -29,9 +23,9 @@ _$DocumentImpl _$$DocumentImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$DocumentImplToJson(_$DocumentImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'birth_date': instance.birthDate?.toIso8601String(),
-      'date_of_issue': instance.dateOfIssue?.toIso8601String(),
-      'end_date': instance.endDate?.toIso8601String(),
+      'birth_date': instance.birthDate,
+      'date_of_issue': instance.dateOfIssue,
+      'end_date': instance.endDate,
       'issued_by': instance.issuedBy,
       'number': instance.number,
       'id': instance.id,

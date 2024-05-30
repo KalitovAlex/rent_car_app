@@ -23,11 +23,11 @@ mixin _$Document {
   @JsonKey(name: "name")
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: "birth_date")
-  DateTime? get birthDate => throw _privateConstructorUsedError;
+  String? get birthDate => throw _privateConstructorUsedError;
   @JsonKey(name: "date_of_issue")
-  DateTime? get dateOfIssue => throw _privateConstructorUsedError;
+  String? get dateOfIssue => throw _privateConstructorUsedError;
   @JsonKey(name: "end_date")
-  DateTime? get endDate => throw _privateConstructorUsedError;
+  String? get endDate => throw _privateConstructorUsedError;
   @JsonKey(name: "issued_by")
   String? get issuedBy => throw _privateConstructorUsedError;
   @JsonKey(name: "number")
@@ -54,9 +54,9 @@ abstract class $DocumentCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "name") String? name,
-      @JsonKey(name: "birth_date") DateTime? birthDate,
-      @JsonKey(name: "date_of_issue") DateTime? dateOfIssue,
-      @JsonKey(name: "end_date") DateTime? endDate,
+      @JsonKey(name: "birth_date") String? birthDate,
+      @JsonKey(name: "date_of_issue") String? dateOfIssue,
+      @JsonKey(name: "end_date") String? endDate,
       @JsonKey(name: "issued_by") String? issuedBy,
       @JsonKey(name: "number") String? number,
       @JsonKey(name: "id") int? id,
@@ -97,15 +97,15 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
       birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       dateOfIssue: freezed == dateOfIssue
           ? _value.dateOfIssue
           : dateOfIssue // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       endDate: freezed == endDate
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       issuedBy: freezed == issuedBy
           ? _value.issuedBy
           : issuedBy // ignore: cast_nullable_to_non_nullable
@@ -144,9 +144,9 @@ abstract class _$$DocumentImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "name") String? name,
-      @JsonKey(name: "birth_date") DateTime? birthDate,
-      @JsonKey(name: "date_of_issue") DateTime? dateOfIssue,
-      @JsonKey(name: "end_date") DateTime? endDate,
+      @JsonKey(name: "birth_date") String? birthDate,
+      @JsonKey(name: "date_of_issue") String? dateOfIssue,
+      @JsonKey(name: "end_date") String? endDate,
       @JsonKey(name: "issued_by") String? issuedBy,
       @JsonKey(name: "number") String? number,
       @JsonKey(name: "id") int? id,
@@ -185,15 +185,15 @@ class __$$DocumentImplCopyWithImpl<$Res>
       birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       dateOfIssue: freezed == dateOfIssue
           ? _value.dateOfIssue
           : dateOfIssue // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       endDate: freezed == endDate
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       issuedBy: freezed == issuedBy
           ? _value.issuedBy
           : issuedBy // ignore: cast_nullable_to_non_nullable
@@ -245,13 +245,13 @@ class _$DocumentImpl implements _Document {
   final String? name;
   @override
   @JsonKey(name: "birth_date")
-  final DateTime? birthDate;
+  final String? birthDate;
   @override
   @JsonKey(name: "date_of_issue")
-  final DateTime? dateOfIssue;
+  final String? dateOfIssue;
   @override
   @JsonKey(name: "end_date")
-  final DateTime? endDate;
+  final String? endDate;
   @override
   @JsonKey(name: "issued_by")
   final String? issuedBy;
@@ -320,9 +320,9 @@ class _$DocumentImpl implements _Document {
 abstract class _Document implements Document {
   factory _Document(
       {@JsonKey(name: "name") final String? name,
-      @JsonKey(name: "birth_date") final DateTime? birthDate,
-      @JsonKey(name: "date_of_issue") final DateTime? dateOfIssue,
-      @JsonKey(name: "end_date") final DateTime? endDate,
+      @JsonKey(name: "birth_date") final String? birthDate,
+      @JsonKey(name: "date_of_issue") final String? dateOfIssue,
+      @JsonKey(name: "end_date") final String? endDate,
       @JsonKey(name: "issued_by") final String? issuedBy,
       @JsonKey(name: "number") final String? number,
       @JsonKey(name: "id") final int? id,
@@ -338,13 +338,13 @@ abstract class _Document implements Document {
   String? get name;
   @override
   @JsonKey(name: "birth_date")
-  DateTime? get birthDate;
+  String? get birthDate;
   @override
   @JsonKey(name: "date_of_issue")
-  DateTime? get dateOfIssue;
+  String? get dateOfIssue;
   @override
   @JsonKey(name: "end_date")
-  DateTime? get endDate;
+  String? get endDate;
   @override
   @JsonKey(name: "issued_by")
   String? get issuedBy;

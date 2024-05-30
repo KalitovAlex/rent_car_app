@@ -9,11 +9,11 @@ class Document with _$Document {
         @JsonKey(name: "name")
         String? name,
         @JsonKey(name: "birth_date")
-        DateTime? birthDate,
+        String? birthDate,
         @JsonKey(name: "date_of_issue")
-        DateTime? dateOfIssue,
+        String? dateOfIssue,
         @JsonKey(name: "end_date")
-        DateTime? endDate,
+        String? endDate,
         @JsonKey(name: "issued_by")
         String? issuedBy,
         @JsonKey(name: "number")

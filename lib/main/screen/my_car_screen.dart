@@ -78,9 +78,9 @@ class _MyCarScreenState extends State<MyCarScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   myCarScreenRow(context, 'ФИО', documentModel.name ?? ''),
-                  myCarScreenRow(context, 'Дата рождения и\nместо', "${documentModel.birthDate!.year}:${documentModel.birthDate!.month}"),
-                  myCarScreenRow(context, 'Дата выдачи', "${documentModel.dateOfIssue!.year}:${documentModel.dateOfIssue!.month}"),
-                  myCarScreenRow(context, 'Дата окончания', "${documentModel.endDate!.year}:${documentModel.endDate!.month}"),
+                  myCarScreenRow(context, 'Дата рождения и\nместо', documentModel.birthDate),
+                  myCarScreenRow(context, 'Дата выдачи', documentModel.dateOfIssue),
+                  myCarScreenRow(context, 'Дата окончания', documentModel.endDate),
                   myCarScreenRow(context, 'Кем выдан', documentModel.issuedBy ?? ''),
                   myCarScreenRow(context, 'Номер', documentModel.number ?? ''),
                   myCarScreenRow(context, 'Где выдан', documentModel.whereIssued ?? ''),
