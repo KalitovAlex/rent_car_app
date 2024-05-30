@@ -67,7 +67,6 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
             title: Text('Изменить данные', style: Theme.of(context).textTheme.titleMedium,),
           ),
           body: SingleChildScrollView(
-            physics: const ScrollPhysics(),
             child: SizedBox(
               height: 90.h,
               child: Container(
@@ -76,7 +75,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))
                 ),
-                padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 2.h),
+                padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 0.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -97,12 +96,12 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                     carTextDecoration('Номер', documentNumberController, context),
                     carTextDecoration('Где выдан', whenGiveController, context),
                     carTextDecoration('Категория', categoriesController, context),
-                    SizedBox(height: 2.h,),
+                    SizedBox(height: 1.h,),
                     Center(
                       heightFactor: BorderSide.strokeAlignOutside,
                       child: Container(
                         width: 80.w,
-                        height: 6.h,
+                        height: 5.5.h,
                         decoration: button_black_decoration,
                         child: TextButton(onPressed: () {
                          if(nameController.text != null && nameController.text != userModel.name && dateBirthController.text.toString() != documentModel.birthDate.toString() && dateBirthController.text != null && dateGiveController.text.toString() != documentModel.dateOfIssue && dateGiveController.text != null && dateExpiredController.text.toString() != documentModel.endDate.toString() && dateExpiredController.text != null && whoGiveController.text != documentModel.issuedBy && whenGiveController.text != '' && documentNumberController.text != documentModel.number && documentNumberController.text != '' && whenGiveController.text != documentModel.whereIssued && whenGiveController.text != '' && categoriesController.text != documentModel.categories && categoriesController.text != ''){

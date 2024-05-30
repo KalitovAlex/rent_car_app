@@ -9,9 +9,9 @@ Widget carTextDecoration(String hint, TextEditingController controller, BuildCon
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
     Text(hint,style: Theme.of(context).textTheme.titleSmall,),
-    SizedBox(height: 1.h,),
+    SizedBox(height: 0.5.h,),
     Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration(hint), controller: controller,),),
-    SizedBox(height: 1.h,)
+    SizedBox(height: 0.5.h,)
     ],
   );
 }
