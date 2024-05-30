@@ -9,7 +9,7 @@ Widget carDateDecoration(String name,BuildContext context, TextEditingController
     children: [
     Text(name,style: Theme.of(context).textTheme.titleSmall,),
     SizedBox(height: 0.5.h,),
-    Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration(name), controller: controller,readOnly: true, onTap: () => selectdate)),
+    Container(decoration: info_lite_container_decoration,child: TextFormField(decoration: invisible_input_decoration(name), controller: controller,readOnly: true, onTap: () => selectdate)),
     SizedBox(height: 0.5.h,)
     ],
   );

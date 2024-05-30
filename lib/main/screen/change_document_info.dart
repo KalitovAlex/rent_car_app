@@ -83,15 +83,15 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                     carTextDecoration('ФИО', nameController, context),
                         Text('Дата рождения',style: Theme.of(context).textTheme.titleSmall,),
                         SizedBox(height: 1.h,),
-                        Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату рождения'), controller: dateBirthController,readOnly: true, onTap: () => selectBirthDate(dateBirthController))),
+                        Container(decoration: info_lite_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату рождения'), controller: dateBirthController,readOnly: true, onTap: () => selectBirthDate(dateBirthController))),
                         SizedBox(height: 1.h,),
                         Text('Дата выдачи',style: Theme.of(context).textTheme.titleSmall,),
                         SizedBox(height: 1.h,),
-                        Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату выдачи'), controller: dateGiveController,readOnly: true, onTap: () => selectDate(dateGiveController))),
+                        Container(decoration: info_lite_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату выдачи'), controller: dateGiveController,readOnly: true, onTap: () => selectDate(dateGiveController))),
                         SizedBox(height: 1.h,),
                         Text('Укажите дату окончания',style: Theme.of(context).textTheme.titleSmall,),
                         SizedBox(height: 1.h,),
-                        Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату окончания'), controller: dateExpiredController,readOnly: true, onTap: () => selectDate(dateExpiredController))),
+                        Container(decoration: info_lite_container_decoration,child: TextFormField(decoration: invisible_input_decoration('укажите дату окончания'), controller: dateExpiredController,readOnly: true, onTap: () => selectDate(dateExpiredController))),
                         SizedBox(height: 1.h,),
                     carTextDecoration('Кем выдан', whoGiveController, context),
                     carTextDecoration('Номер', documentNumberController, context),
@@ -106,7 +106,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                         decoration: button_black_decoration,
                         child: TextButton(onPressed: () {
                          if(nameController.text != null && nameController.text != userModel.name && dateBirthController.text.toString() != documentModel.birthDate.toString() && dateBirthController.text != null && dateGiveController.text.toString() != documentModel.dateOfIssue && dateGiveController.text != null && dateExpiredController.text.toString() != documentModel.endDate.toString() && dateExpiredController.text != null && whoGiveController.text != documentModel.issuedBy && whenGiveController.text != '' && documentNumberController.text != documentModel.number && documentNumberController.text != '' && whenGiveController.text != documentModel.whereIssued && whenGiveController.text != '' && categoriesController.text != documentModel.categories && categoriesController.text != ''){
-                          documentRepository.changeDocument();
+                          changeDocument();
                          } else{
                           showSnackBar(context, 'Вы неправильно заполнили поля');
                          }

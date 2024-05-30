@@ -10,7 +10,7 @@ Widget carTextDecoration(String hint, TextEditingController controller, BuildCon
     children: [
     Text(hint,style: Theme.of(context).textTheme.titleSmall,),
     SizedBox(height: 0.5.h,),
-    Container(decoration: info_container_decoration,child: TextFormField(decoration: invisible_input_decoration(hint), controller: controller,),),
+    Container(decoration: info_lite_container_decoration,child: TextFormField(decoration: invisible_input_decoration(hint), controller: controller,),),
     SizedBox(height: 0.5.h,)
     ],
   );
