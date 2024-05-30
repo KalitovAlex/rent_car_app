@@ -9,6 +9,7 @@ import 'package:rent_car_app/authorizationPage/repository/abstract_user_reposito
 import 'package:rent_car_app/authorizationPage/repository/user_repository.dart';
 import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.dart';
+import 'package:rent_car_app/main/bloc/change_document_bloc.dart';
 import 'package:rent_car_app/main/model/document.dart';
 import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
 import 'package:rent_car_app/main/repository/document_repository.dart';
@@ -71,7 +72,8 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider(
           create: (context) => AuthBloc()),
-        BlocProvider(create: (context) => RegistrationBloc())
+        BlocProvider(create: (context) => RegistrationBloc()),
+        BlocProvider(create: (_) => ChangeDocumentBloc())
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) {
