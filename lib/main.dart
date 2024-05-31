@@ -13,6 +13,8 @@ import 'package:rent_car_app/main/bloc/change_document_bloc.dart';
 import 'package:rent_car_app/main/model/car/car.dart';
 import 'package:rent_car_app/main/model/document.dart';
 import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
+import 'package:rent_car_app/main/repository/car/abstract_car_repository.dart';
+import 'package:rent_car_app/main/repository/car/car_repository.dart';
 import 'package:rent_car_app/main/repository/document_repository.dart';
 import 'package:rent_car_app/theme/theme.dart';
 import 'package:sizer/sizer.dart';
@@ -25,15 +27,20 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   initDependencies();
   initSingletons();
+  carRepository.getAllCar();
   runApp(const MyApp());
 }
 
 void initSingletons() {
+  //Register objects in GetIt
   GetIt.I.registerLazySingleton(() => const User());
   GetIt.I.registerLazySingleton(() => Document());
+  GetIt.I.registerLazySingleton(() => const Car());
+
+  //Register repository in GetIt
   GetIt.I.registerLazySingleton<AbstractUserRepository>(() => UserRepository());
   GetIt.I.registerLazySingleton<AbstractDocumentRepository>(() => DocumentRepository());
-  GetIt.I.registerLazySingleton(() => const Car());
+  GetIt.I.registerLazySingleton<AbstractCarRepository>(() => CarRepository());
 }
 void initDependencies() {
   GetIt.I.registerSingleton<Talker>(talker);
