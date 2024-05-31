@@ -8,7 +8,7 @@ class DocumentRepository extends AbstractDocumentRepository{
   Future<bool> changeDocument() async{
     try{
       final response = await Dio().put(
-        'http://5.42.220.228/api/documents?id=${documentModel.id}', data: documentModel.toJson()
+        'http://$ip/api/documents?id=${documentModel.id}', data: documentModel.toJson()
         );
       talker.log(response.data);
         return true;

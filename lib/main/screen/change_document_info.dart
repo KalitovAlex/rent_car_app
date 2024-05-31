@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rent_car_app/core/globals.dart';
+import 'package:rent_car_app/core/routes.gr.dart';
 import 'package:rent_car_app/main/bloc/change_document_bloc.dart';
 import 'package:rent_car_app/widget/loading_circle.dart';
 import 'package:rent_car_app/widget/snack_bar.dart';
@@ -86,9 +87,13 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
           showLoadingCircle(context);
         }
         if(state is ChangeDocumentLoaded){
+          Navigator.of(context).pop();
+          AutoRouter.of(context).push(const HomeRoute());
           showSnackBar(context, 'Данные успешно изменены');
+
         }
         if(state is ChangeDocumentFailure){
+          Navigator.of(context).pop();
           showSnackBar(context, 'Ошибка изменения данных');
         }
       },
@@ -195,6 +200,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                                   documentNumberController.text.isNotEmpty &&
                                   whenGiveController.text.isNotEmpty &&
                                   categoriesController.text.isNotEmpty) {
+                                changeDocument();
                                 bloccommand.add(ChangeDocumentEvent());
                               } else {
                                 showSnackBar(
