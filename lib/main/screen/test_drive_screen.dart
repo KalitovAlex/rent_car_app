@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -6,7 +7,7 @@ import 'package:rent_car_app/main/widget/test_drive_screen_listview.dart';
 import 'package:rent_car_app/theme/colors.dart';
 
 import '../model/car/car.dart';
-
+@RoutePage()
 class TestDriveScreen extends StatefulWidget {
   List<Car> carList;
   TestDriveScreen({

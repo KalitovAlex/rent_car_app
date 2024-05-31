@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/helper/adaptive_helper.dart';
 import 'package:rent_car_app/main/screen/info_company_screen.dart';
@@ -25,6 +26,9 @@ class _HomePageState extends State<HomePage> {
   }
     getAllCar() async{
     carList = await carRepository.getAllCar();
+    setState(() {
+      
+    });
     }
   @override
   Widget build(BuildContext context) {
@@ -41,14 +45,27 @@ class _HomePageState extends State<HomePage> {
               decoration: const BoxDecoration(
                 color: Colors.white,
               ),
-              child: TabBar(
-                labelColor: Colors.black,
-                dividerColor: Colors.transparent,
-                tabs: [
-               Tab(child: Text('Мое авто',style: Theme.of(context).textTheme.titleSmall,)),
-               Tab(child: Text('Тест-драйв',style: Theme.of(context).textTheme.titleSmall,),),
-               Tab(child: Text('О компании',style: Theme.of(context).textTheme.titleSmall,),)
-              ]),
+              child: Center(
+                child: ButtonsTabBar(
+                  labelStyle: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+        unselectedLabelStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+                  backgroundColor: Colors.black,
+                  radius: 30,
+                  height: 20.h,
+                  contentPadding: EdgeInsets.all(12),
+                  buttonMargin: EdgeInsets.only(right: 4.w,left: 4.w,top: 1.5.h,bottom: 1.5.h),
+                  tabs: const [
+                 Tab(text: 'мое авто',),
+                 Tab(text: 'Тест-драйв',),
+                 Tab(text: 'О компании',),
+                ]),
+              ),
             ),
             Expanded(
               child: TabBarView(children: [

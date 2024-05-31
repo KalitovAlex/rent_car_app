@@ -1,6 +1,8 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
+import 'package:rent_car_app/widget/snack_bar.dart';
 import 'package:sizer/sizer.dart';
 
 
@@ -57,7 +59,20 @@ Widget testDriveScreenListView(BuildContext context,String brand, String model, 
                         offset: const Offset(0, 4)
                         )
                       ]
-                    ),child: TextButton(onPressed: (){}, child: const Text('Записаться',style: TextStyle(color: Colors.white,fontSize: 20),))),
+                    ),child: TextButton(onPressed: (){
+                      QuickAlert.show(context: context, type: QuickAlertType.confirm, 
+                              title: 'Вы уверены?',
+                              text: 'Вы точно хотите записаться на тест драйв на ${dates.first!.year} : ${dates.first!.month} : ${dates.first!.day}? ',
+                              confirmBtnText: 'Да',
+                              cancelBtnText: 'Нет',
+                              headerBackgroundColor: Colors.blueAccent,
+                              barrierColor: const Color.fromARGB(255, 153, 191, 255),
+                              onConfirmBtnTap: (){
+                                Navigator.of(context).pop();
+                                showSnackBar(context, 'Вы успешно записались на тест драйв,скоро вам напишет наш консультант');
+                              }
+                              );
+                    }, child: const Text('Записаться',style: TextStyle(color: Colors.white,fontSize: 20),))),
                     SizedBox(height: 5.h,)
         ],
       ),
