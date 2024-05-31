@@ -44,8 +44,8 @@ mixin _$Car {
   String? get transmission => throw _privateConstructorUsedError;
   @JsonKey(name: "wheel")
   String? get wheel => throw _privateConstructorUsedError;
-  @JsonKey(name: "img_id")
-  int? get imgId => throw _privateConstructorUsedError;
+  @JsonKey(name: "image_name")
+  String? get imageName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -70,7 +70,7 @@ abstract class $CarCopyWith<$Res> {
       @JsonKey(name: "body") String? body,
       @JsonKey(name: "transmission") String? transmission,
       @JsonKey(name: "wheel") String? wheel,
-      @JsonKey(name: "img_id") int? imgId});
+      @JsonKey(name: "image_name") String? imageName});
 }
 
 /// @nodoc
@@ -97,7 +97,7 @@ class _$CarCopyWithImpl<$Res, $Val extends Car> implements $CarCopyWith<$Res> {
     Object? body = freezed,
     Object? transmission = freezed,
     Object? wheel = freezed,
-    Object? imgId = freezed,
+    Object? imageName = freezed,
   }) {
     return _then(_value.copyWith(
       engine: freezed == engine
@@ -148,10 +148,10 @@ class _$CarCopyWithImpl<$Res, $Val extends Car> implements $CarCopyWith<$Res> {
           ? _value.wheel
           : wheel // ignore: cast_nullable_to_non_nullable
               as String?,
-      imgId: freezed == imgId
-          ? _value.imgId
-          : imgId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      imageName: freezed == imageName
+          ? _value.imageName
+          : imageName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -175,7 +175,7 @@ abstract class _$$CarImplCopyWith<$Res> implements $CarCopyWith<$Res> {
       @JsonKey(name: "body") String? body,
       @JsonKey(name: "transmission") String? transmission,
       @JsonKey(name: "wheel") String? wheel,
-      @JsonKey(name: "img_id") int? imgId});
+      @JsonKey(name: "image_name") String? imageName});
 }
 
 /// @nodoc
@@ -199,7 +199,7 @@ class __$$CarImplCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$CarImpl>
     Object? body = freezed,
     Object? transmission = freezed,
     Object? wheel = freezed,
-    Object? imgId = freezed,
+    Object? imageName = freezed,
   }) {
     return _then(_$CarImpl(
       engine: freezed == engine
@@ -250,10 +250,10 @@ class __$$CarImplCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$CarImpl>
           ? _value.wheel
           : wheel // ignore: cast_nullable_to_non_nullable
               as String?,
-      imgId: freezed == imgId
-          ? _value.imgId
-          : imgId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      imageName: freezed == imageName
+          ? _value.imageName
+          : imageName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -274,7 +274,7 @@ class _$CarImpl implements _Car {
       @JsonKey(name: "body") this.body,
       @JsonKey(name: "transmission") this.transmission,
       @JsonKey(name: "wheel") this.wheel,
-      @JsonKey(name: "img_id") this.imgId});
+      @JsonKey(name: "image_name") this.imageName});
 
   factory _$CarImpl.fromJson(Map<String, dynamic> json) =>
       _$$CarImplFromJson(json);
@@ -316,12 +316,12 @@ class _$CarImpl implements _Car {
   @JsonKey(name: "wheel")
   final String? wheel;
   @override
-  @JsonKey(name: "img_id")
-  final int? imgId;
+  @JsonKey(name: "image_name")
+  final String? imageName;
 
   @override
   String toString() {
-    return 'Car(engine: $engine, color: $color, complectation: $complectation, drive: $drive, vinNumber: $vinNumber, id: $id, model: $model, brand: $brand, releaseYear: $releaseYear, body: $body, transmission: $transmission, wheel: $wheel, imgId: $imgId)';
+    return 'Car(engine: $engine, color: $color, complectation: $complectation, drive: $drive, vinNumber: $vinNumber, id: $id, model: $model, brand: $brand, releaseYear: $releaseYear, body: $body, transmission: $transmission, wheel: $wheel, imageName: $imageName)';
   }
 
   @override
@@ -345,7 +345,8 @@ class _$CarImpl implements _Car {
             (identical(other.transmission, transmission) ||
                 other.transmission == transmission) &&
             (identical(other.wheel, wheel) || other.wheel == wheel) &&
-            (identical(other.imgId, imgId) || other.imgId == imgId));
+            (identical(other.imageName, imageName) ||
+                other.imageName == imageName));
   }
 
   @JsonKey(ignore: true)
@@ -364,7 +365,7 @@ class _$CarImpl implements _Car {
       body,
       transmission,
       wheel,
-      imgId);
+      imageName);
 
   @JsonKey(ignore: true)
   @override
@@ -394,7 +395,7 @@ abstract class _Car implements Car {
       @JsonKey(name: "body") final String? body,
       @JsonKey(name: "transmission") final String? transmission,
       @JsonKey(name: "wheel") final String? wheel,
-      @JsonKey(name: "img_id") final int? imgId}) = _$CarImpl;
+      @JsonKey(name: "image_name") final String? imageName}) = _$CarImpl;
 
   factory _Car.fromJson(Map<String, dynamic> json) = _$CarImpl.fromJson;
 
@@ -435,8 +436,8 @@ abstract class _Car implements Car {
   @JsonKey(name: "wheel")
   String? get wheel;
   @override
-  @JsonKey(name: "img_id")
-  int? get imgId;
+  @JsonKey(name: "image_name")
+  String? get imageName;
   @override
   @JsonKey(ignore: true)
   _$$CarImplCopyWith<_$CarImpl> get copyWith =>

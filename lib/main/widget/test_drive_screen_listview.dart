@@ -1,8 +1,10 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:sizer/sizer.dart';
 
-Widget testDriveScreenListView(){
+
+Widget testDriveScreenListView(BuildContext context,String brand, String model, String engine, String releaseYear, String color, String body, String complectation, String drive, String transmission, String wheel){
   List<DateTime?> dates = [];
   return Expanded(
     child: SingleChildScrollView(
@@ -17,6 +19,18 @@ Widget testDriveScreenListView(){
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30)
+                      ),
+                      child: Column(
+                        children: [
+                          myCarScreenRow(context, 'Год выпуска', releaseYear),
+                          myCarScreenRow(context, 'Двигатель', engine),
+                          myCarScreenRow(context, 'Цвет', releaseYear),
+                          myCarScreenRow(context, 'Кузов', body),
+                          myCarScreenRow(context, 'Комплектация', complectation),
+                          myCarScreenRow(context, 'Коробка', drive),
+                          myCarScreenRow(context, 'Привот', transmission),
+                          myCarScreenRow(context, 'Руль', wheel)
+                        ],
                       ),
                     ),
                     SizedBox(height: 3.h,),

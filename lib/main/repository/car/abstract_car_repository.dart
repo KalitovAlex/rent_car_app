@@ -1,3 +1,5 @@
+import '../../model/car/car.dart';
+
 abstract class AbstractCarRepository {
-  Future<bool> getAllCar();
+  Future<List<Car>> getAllCar();
 }

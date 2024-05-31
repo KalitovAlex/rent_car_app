@@ -30,8 +30,8 @@ class Car with _$Car {
         String? transmission,
         @JsonKey(name: "wheel")
         String? wheel,
-        @JsonKey(name: "img_id")
-        int? imgId,
+        @JsonKey(name: "image_name")
+        String? imageName,
     }) = _Car;
 
     factory Car.fromJson(Map<String, dynamic> json) => _$CarFromJson(json);

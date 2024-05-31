@@ -19,7 +19,7 @@ _$CarImpl _$$CarImplFromJson(Map<String, dynamic> json) => _$CarImpl(
       body: json['body'] as String?,
       transmission: json['transmission'] as String?,
       wheel: json['wheel'] as String?,
-      imgId: (json['img_id'] as num?)?.toInt(),
+      imageName: json['image_name'] as String?,
     );
 
 Map<String, dynamic> _$$CarImplToJson(_$CarImpl instance) => <String, dynamic>{
@@ -35,5 +35,5 @@ Map<String, dynamic> _$$CarImplToJson(_$CarImpl instance) => <String, dynamic>{
       'body': instance.body,
       'transmission': instance.transmission,
       'wheel': instance.wheel,
-      'img_id': instance.imgId,
+      'image_name': instance.imageName,
     };

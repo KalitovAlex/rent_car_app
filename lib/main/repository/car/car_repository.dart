@@ -5,17 +5,17 @@ import 'package:rent_car_app/main/repository/car/abstract_car_repository.dart';
 
 class CarRepository extends AbstractCarRepository{
   @override
-  Future<bool> getAllCar() async{
+  Future <List<Car>> getAllCar() async{
       try{
       final response = await Dio().get
         ('http://$ip/api/autos/all?limit=3');
-        final responseData = await response.data as Map<String, dynamic>;
-        carModel = Car.fromJson(responseData);
-        talker.log(responseData);
-        return true;
+        final responseData = await response.data as List<Map<String, dynamic>>;
+        List<Car> carModelList = responseData.map((e) => Car.fromJson(e)).toList();
+        talker.log(carModel);
+        return carModelList;
       } catch (e){
         talker.error(e);
-        return false;
+        return [];
       }
   }
 
