@@ -31,7 +31,19 @@ Widget testDriveScreenListView(){
                       ),
                     ),
                     SizedBox(height: 3.h,),
-                    TextButton(onPressed: (){}, child: const Text('Записаться',style: TextStyle(color: Colors.white,fontSize: 20),)),
+                    Container(
+                      width: 85.w,
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blue,
+                      boxShadow: [
+                        BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4)
+                        )
+                      ]
+                    ),child: TextButton(onPressed: (){}, child: const Text('Записаться',style: TextStyle(color: Colors.white,fontSize: 20),))),
                     SizedBox(height: 5.h,)
         ],
       ),
