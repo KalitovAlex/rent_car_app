@@ -15,10 +15,13 @@ class TestDriveScreen extends StatelessWidget {
         child:  Column(
           children: [
           Expanded(
-            child: ListView.builder(
+            child: ListView.separated(
+              separatorBuilder:(context, index) {
+              return  SizedBox(width: 3.w,);
+              },
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: 1,
+              itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
                 return testDriveScreenListView();
               },
