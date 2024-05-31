@@ -41,7 +41,7 @@ class _TestDriveScreenState extends State<TestDriveScreen> {
               itemCount: carList.length,
               itemBuilder: (BuildContext context, int index) {
                 final currentCar = carList[index];
-                return testDriveScreenListView(context, currentCar.brand!, currentCar.model!, currentCar.engine!, currentCar.releaseYear!, currentCar.color!, currentCar.body!, currentCar.complectation!, currentCar.drive!, currentCar.transmission!, currentCar.wheel!);
+                return testDriveScreenListView(context, currentCar.brand!, currentCar.model!, currentCar.engine!, currentCar.releaseYear!, currentCar.color!, currentCar.body!, currentCar.complectation!, currentCar.drive!, currentCar.transmission!, currentCar.wheel!, currentCar.imageName!);
               },
             ),
           ),

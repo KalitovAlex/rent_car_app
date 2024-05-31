@@ -33,7 +33,7 @@ void main() {
 
 void initSingletons() {
   //Register objects in GetIt
-  GetIt.I.registerLazySingleton(() => const User());
+  GetIt.I.registerLazySingleton(() => const User()); 
   GetIt.I.registerLazySingleton(() => Document());
   GetIt.I.registerLazySingleton(() => const Car());
 
