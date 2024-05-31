@@ -1,28 +1,24 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:rent_car_app/core/globals.dart';
+import 'package:sizer/sizer.dart';
+
 import 'package:rent_car_app/main/widget/test_drive_screen_listview.dart';
 import 'package:rent_car_app/theme/colors.dart';
-import 'package:sizer/sizer.dart';
 
 import '../model/car/car.dart';
 
 class TestDriveScreen extends StatefulWidget {
-  const TestDriveScreen({super.key});
+  List<Car> carList;
+  TestDriveScreen({
+    super.key,
+    required this.carList,
+  });
 
   @override
   State<TestDriveScreen> createState() => _TestDriveScreenState();
 }
 
 class _TestDriveScreenState extends State<TestDriveScreen> {
-  List<Car> carList =  [];
-  @override
-  void initState() { 
-    getAllCar();
-    super.initState();
-  }
-  getAllCar() async{
-    carList = await carRepository.getAllCar();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +34,9 @@ class _TestDriveScreenState extends State<TestDriveScreen> {
               },
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: carList.length,
+              itemCount: widget.carList.length,
               itemBuilder: (BuildContext context, int index) {
-                final currentCar = carList[index];
+                final currentCar = widget.carList[index];
                 return testDriveScreenListView(context, currentCar.brand!, currentCar.model!, currentCar.engine!, currentCar.releaseYear!, currentCar.color!, currentCar.body!, currentCar.complectation!, currentCar.drive!, currentCar.transmission!, currentCar.wheel!, currentCar.imageName!);
               },
             ),

@@ -15,21 +15,21 @@ Widget testDriveScreenListView(BuildContext context,String brand, String model, 
           SizedBox(height: 2.h,),
                     Container(
                       width: 90.w,
-                      height: 50.h,
+                      padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
+                      height: 35.h,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30)
                       ),
                       child: Column(
                         children: [
-                          myCarScreenRow(context, 'Год выпуска', releaseYear),
+                          myCarScreenRow(context, 'Год выпуска', brand),
                           myCarScreenRow(context, 'Двигатель', engine),
-                          myCarScreenRow(context, 'Цвет', releaseYear),
+                          myCarScreenRow(context, 'Цвет', color),
                           myCarScreenRow(context, 'Кузов', body),
                           myCarScreenRow(context, 'Комплектация', complectation),
-                          myCarScreenRow(context, 'Коробка', drive),
-                          myCarScreenRow(context, 'Привот', transmission),
-                          myCarScreenRow(context, 'Руль', wheel)
+                          myCarScreenRow(context, 'Коробка', transmission),
+                          myCarScreenRow(context, 'Привод', wheel),
                         ],
                       ),
                     ),

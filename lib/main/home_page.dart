@@ -5,6 +5,9 @@ import 'package:rent_car_app/main/screen/info_company_screen.dart';
 import 'package:rent_car_app/main/screen/my_car_screen.dart';
 import 'package:rent_car_app/main/screen/test_drive_screen.dart';
 import 'package:sizer/sizer.dart';
+
+import '../core/globals.dart';
+import 'model/car/car.dart';
 @RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +17,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Car> carList = [];
+  @override
+  void initState() {
+    super.initState();
+    getAllCar();
+  }
+    getAllCar() async{
+    carList = await carRepository.getAllCar();
+    }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -38,11 +50,11 @@ class _HomePageState extends State<HomePage> {
                Tab(child: Text('О компании',style: Theme.of(context).textTheme.titleSmall,),)
               ]),
             ),
-            const Expanded(
+            Expanded(
               child: TabBarView(children: [
-                MyCarScreen(),
-                TestDriveScreen(),
-                InfoCompanyScreen()
+                const MyCarScreen(),
+                TestDriveScreen(carList: carList,),
+                const InfoCompanyScreen()
               ]),
             )
           ],
