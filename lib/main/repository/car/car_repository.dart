@@ -9,9 +9,9 @@ class CarRepository extends AbstractCarRepository{
       try{
       final response = await Dio().get
         ('http://$ip/api/autos/all?limit=3');
-        final responseData = await response.data as List<Map<String, dynamic>>;
+        final responseData = await response.data as List<dynamic>;
         List<Car> carModelList = responseData.map((e) => Car.fromJson(e)).toList();
-        talker.log(carModel);
+        talker.log(carModelList);
         return carModelList;
       } catch (e){
         talker.error(e);
