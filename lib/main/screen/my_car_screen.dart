@@ -45,7 +45,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
               height: 30.h,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(80),
-                child: Image.asset('assets/png/background_car.jpeg',fit: BoxFit.fill,),
+                child: Image.network('https://avatars.mds.yandex.net/get-autoru-vos/10147541/958cc70c55fd3922c11b0ea1e48c4965/1200x900n',fit: BoxFit.fill,),
               ),
             ),
             SizedBox(height: 2.h,),

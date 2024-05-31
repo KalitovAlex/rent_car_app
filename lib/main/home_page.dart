@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                   backgroundColor: Colors.black,
                   radius: 30,
                   height: 20.h,
-                  contentPadding: EdgeInsets.all(12),
+                  contentPadding: const EdgeInsets.all(12),
                   buttonMargin: EdgeInsets.only(right: 4.w,left: 4.w,top: 1.5.h,bottom: 1.5.h),
                   tabs: const [
                  Tab(text: 'мое авто',),
