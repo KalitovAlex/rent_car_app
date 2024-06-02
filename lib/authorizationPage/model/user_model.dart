@@ -12,14 +12,17 @@ class UserModel extends AbstractUserModel{
       UserCredential userCredential = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       return userCredential;
   }
+  //sign user up
   Future<UserCredential> signUpWithEmailAndPassword(String email, String password) async{
     UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
     return userCredential;
   }
+  //sign out
   @override
   Future<void> signOut() async{
     return await FirebaseAuth.instance.signOut();
   }
+  //create user
   @override
   Future<void> createUser() async{
     // ignore: body_might_complete_normally_catch_error
