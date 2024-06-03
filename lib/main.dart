@@ -43,18 +43,13 @@ void initSingletons() {
   GetIt.I.registerLazySingleton<AbstractCarRepository>(() => CarRepository());
 }
 void initDependencies() {
-  GetIt.I.registerSingleton<Talker>(talker);
-final dio = Dio();
-dio.interceptors.add(
-    TalkerDioLogger(
-        settings: const TalkerDioLoggerSettings(
-          printResponseData: true,
-          printRequestData: false,
-          printResponseHeaders: true,
-          printRequestHeaders: false,
-        ),
-    ),
-);
+GetIt.I.registerLazySingleton<Talker>(() => Talker());
+final talker = TalkerFlutter.init();
+    Dio().interceptors.add(
+      TalkerDioLogger(
+        talker: talker,
+      ),
+    );
   talker.info('App Started');
   Bloc.observer = TalkerBlocObserver(
       talker: talker,
