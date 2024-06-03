@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
+import 'package:rent_car_app/core/routes.gr.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
 import 'package:sizer/sizer.dart';
 @RoutePage()
@@ -20,7 +21,9 @@ class _HomePageState extends State<HomePage> {
         child: Center(child: Container(
           width: 50.w,
           decoration: button_black_decoration,
-          child: TextButton(onPressed: (){authService.signOut();}, child: Text('Sign out', style: Theme.of(context).textTheme.labelMedium,))),),
+          child: TextButton(onPressed: (){authService.signOut();
+          AutoRouter.of(context).push(const AuthorizaitonRoute());
+          }, child: Text('Sign out', style: Theme.of(context).textTheme.labelMedium,))),),
       ),
     );
   }
