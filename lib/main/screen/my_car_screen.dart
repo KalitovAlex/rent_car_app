@@ -50,7 +50,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
             ),
             SizedBox(height: 2.h,),
             Container(
-              padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
+              padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h),
               decoration: info_container_decoration,
               height: 60.h,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
@@ -71,7 +71,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
             Center(child: Text('Мои документы', style: Theme.of(context).textTheme.titleLarge,)),
             SizedBox(height: 2.h,),
             Container(
-              padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
+              padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h),
               decoration: info_container_decoration,
               height: 49.h,
               child: Column(
