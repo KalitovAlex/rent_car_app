@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:rent_car_app/authorizationPage/model/abstract_user_model.dart';
 import 'package:rent_car_app/authorizationPage/model/user_model.dart';
+import 'package:rent_car_app/core/firebase_api.dart';
 import 'package:rent_car_app/core/routes.dart';
 import 'package:rent_car_app/firebase_options.dart';
 import 'package:rent_car_app/theme/theme.dart';
@@ -20,7 +21,8 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
+  await FirebaseApi().initNotifications();
   runApp(const MyApp());
 }
 final talker = TalkerFlutter.init();
