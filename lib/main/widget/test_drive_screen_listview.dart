@@ -12,7 +12,6 @@ Widget testDriveScreenListView(BuildContext context,String brand, String model, 
     child: Container(
       padding: EdgeInsets.only(right: 3.w,top: 5.h),
       child: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
         child: Column(
           children: [
             ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.network(image,fit: BoxFit.cover,height: 30.h,width: 90.w,)),

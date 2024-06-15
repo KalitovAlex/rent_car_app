@@ -107,7 +107,6 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
             ),
           ),
           body: SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
             child: SizedBox(
               height: 90.h,
               child: Container(
@@ -127,7 +126,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 0.5.h,
                     ),
                     Container(
                         decoration: info_lite_container_decoration,
@@ -145,7 +144,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 0.5.h,
                     ),
                     Container(
                         decoration: info_lite_container_decoration,
@@ -156,14 +155,14 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                             readOnly: true,
                             onTap: () => selectDate(dateGiveController))),
                     SizedBox(
-                      height: 1.h,
+                      height: 0.5.h,
                     ),
                     Text(
                       'Укажите дату окончания',
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 0.5.h,
                     ),
                     Container(
                         decoration: info_lite_container_decoration,
@@ -174,7 +173,7 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                             readOnly: true,
                             onTap: () => selectDate(dateExpiredController))),
                     SizedBox(
-                      height: 1.h,
+                      height: 0.5.h,
                     ),
                     carTextDecoration('Кем выдан', whoGiveController, context),
                     carTextDecoration(
@@ -183,13 +182,13 @@ class _ChangeDocumentInfoState extends State<ChangeDocumentInfo> {
                     carTextDecoration(
                         'Категория', categoriesController, context),
                     SizedBox(
-                      height: 1.h,
+                      height: 0.5.h,
                     ),
                     Center(
                       heightFactor: BorderSide.strokeAlignOutside,
                       child: Container(
                         width: 80.w,
-                        height: 5.5.h,
+                        height: 4.5.h,
                         decoration: button_black_decoration,
                         child: TextButton(
                             onPressed: () {
