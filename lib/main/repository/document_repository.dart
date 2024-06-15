@@ -29,7 +29,7 @@ class DocumentRepository extends AbstractDocumentRepository{
       return true;
     } catch(e){
       talker.log(e);
-      return false;
+    return false;
     }
   }
 

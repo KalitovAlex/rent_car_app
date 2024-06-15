@@ -81,7 +81,7 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
                     decoration: text_field_boxdecoration,
                     child: TextFormField(
                       controller: passwordController,
-                      decoration: invisible_input_decoration('пароль'),
+                      decoration: invisible_input_decoration('Пароль'),
                     )),
                 SizedBox(
                   height: 3.h,

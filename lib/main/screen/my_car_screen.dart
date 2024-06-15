@@ -52,7 +52,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
             Container(
               padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h),
               decoration: info_container_decoration,
-              height: 60.h,
+              height: 70.h,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                 myCarScreenRow(context, 'Марка', 'Rolls-royce'),
                 myCarScreenRow(context, 'Модель', 'Phantom'),
@@ -73,7 +73,7 @@ class _MyCarScreenState extends State<MyCarScreen> {
             Container(
               padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h),
               decoration: info_container_decoration,
-              height: 49.h,
+              height: 56.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
