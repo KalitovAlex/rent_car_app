@@ -9,8 +9,8 @@ class ChangeDocumentBloc extends Bloc<ChangeDocumentEvent, ChangeDocumentState> 
     on<ChangeDocumentEvent>((event, emit) async{
       try{
       emit(ChangeDocumentLoading());
-      final responseData = await documentRepository.changeDocument();
-      responseData == true ? emit(ChangeDocumentLoaded()) : emit(ChangeDocumentFailure()); 
+      // final responseData = await documentRepository.changeDocument();
+      // responseData == true ? emit(ChangeDocumentLoaded()) : emit(ChangeDocumentFailure()); 
       } catch(e){
         talker.error(e);
       }

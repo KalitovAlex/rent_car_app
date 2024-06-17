@@ -1,11 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:rent_car_app/core/globals.dart';
-import 'package:rent_car_app/helper/adaptive_helper.dart';
 import 'package:rent_car_app/main/widget/my_car_screen_row.dart';
 import 'package:rent_car_app/theme/colors.dart';
 import 'package:rent_car_app/theme/style/container_form_styles.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../core/routes.gr.dart';
 
@@ -34,25 +32,27 @@ class _MyCarScreenState extends State<MyCarScreen> {
     }
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Container(
-        padding: EdgeInsets.only(left: 5.w,right: 5.w),
+        padding: EdgeInsets.only(left: width/20,right: width/20),
         child:  ListView(
           children: [
             SizedBox(
-              width: width(context),
-              height: 30.h,
+              width: width,
+              height: height/3,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(80),
                 child: Image.network('https://avatars.mds.yandex.net/get-autoru-vos/10147541/958cc70c55fd3922c11b0ea1e48c4965/1200x900n',fit: BoxFit.fill,),
               ),
             ),
-            SizedBox(height: 2.h,),
+            SizedBox(height: height/28,),
             Container(
-              padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h),
+              padding: EdgeInsets.only(left: width/50,right: width/50,top: height/100),
               decoration: info_container_decoration,
-              height: 70.h,
+              height: height/1.5,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                 myCarScreenRow(context, 'Марка', 'Rolls-royce'),
                 myCarScreenRow(context, 'Модель', 'Phantom'),
@@ -67,13 +67,13 @@ class _MyCarScreenState extends State<MyCarScreen> {
                 myCarScreenRow(context, 'VIN - номер', '1N4DL01DXWC257013')
               ],),
             ),
-            SizedBox(height: 2.h,),
+            SizedBox(height: height/50,),
             Center(child: Text('Мои документы', style: Theme.of(context).textTheme.titleLarge,)),
-            SizedBox(height: 2.h,),
+            SizedBox(height: height/50),
             Container(
-              padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h),
+              padding: EdgeInsets.only(left: width/50,right: width/50,top: height/100),
               decoration: info_container_decoration,
-              height: 56.h,
+              height: height/1.90,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -85,11 +85,11 @@ class _MyCarScreenState extends State<MyCarScreen> {
                   myCarScreenRow(context, 'Номер', documentModel.number ?? ''),
                   myCarScreenRow(context, 'Где выдан', documentModel.whereIssued ?? ''),
                   myCarScreenRow(context, 'Категория',  documentModel.categories ?? ''),
-                  SizedBox(height: 2.h,),
+                  SizedBox(height: height/50,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SizedBox(width: 30.w,height: 5.h,child: FloatingActionButton(onPressed: (){
+                      SizedBox(width: width/3.3,height: height/20,child: FloatingActionButton(onPressed: (){
                         AutoRouter.of(context).push(const ChangeDocumentInfo());
 
                       }, child: Text('Изменить', style: Theme.of(context).textTheme.titleSmall,),)),
@@ -97,7 +97,8 @@ class _MyCarScreenState extends State<MyCarScreen> {
                   )
                 ],
               ),
-            )
+            ),
+            SizedBox(height: height/20,)
 
           ],
         ),

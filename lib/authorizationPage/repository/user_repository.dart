@@ -1,36 +1,32 @@
-import 'package:dio/dio.dart';
-import 'package:rent_car_app/authorizationPage/model/user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rent_car_app/authorizationPage/repository/abstract_user_repository.dart';
 import 'package:rent_car_app/core/globals.dart';
 
-class UserRepository implements AbstractUserRepository{
-  @override
-  Future<bool> authorization() async{
+class UserRepository extends AbstractUserRepository{
+   @override
+  Future<bool> registration(user) async{
     try{
-      final response = await Dio().get(
-      'http://$ip/api/users?email=${userModel.email}&password=${userModel.password}'
-      );
-      final responseData = response.data as Map<String,dynamic>;
-      userModel = User.fromJson(responseData);
-      talker.log(responseData.toString());
+      final response = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: user.email!, password: user.password!);
+      await userReference.doc(response.user!.uid).set(userModel.toJson());
       return true;
-    } catch (e){
+    } catch(e){
       talker.error(e);
       return false;
     }
   }
-  @override
-  Future<bool> registration() async {
+  
+ @override
+  Future<bool> authorization(String? login, String? password) async{
     try{
-      final response = await Dio().post(
-        'http://$ip/api/users', data: userModel.toJson()
-      );
-      final responseData = response.data as Map<String, dynamic>;
-      userModel = User.fromJson(responseData);
-      talker.log(response.data);
-      talker.log(responseData.toString());
+      final response = await FirebaseAuth.instance.signInWithEmailAndPassword(email: login!, password: password!);
+      final user = await userReference.doc(response.user!.uid).get();
+      userModel = userModel.copyWith(phoneNumber: user.get('phone_number'), username: user.get('user_name'), uid: response.user!.uid);
+      talker.log(userModel.phoneNumber);
       return true;
-    } catch (e){
+    } on FirebaseAuthException{
+      talker.log('error ');
+      return false;
+    } catch(e){
       talker.error(e);
       return false;
     }

@@ -21,6 +21,8 @@ class TestDriveScreen extends StatefulWidget {
 class _TestDriveScreenState extends State<TestDriveScreen> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Expanded(
@@ -29,7 +31,7 @@ class _TestDriveScreenState extends State<TestDriveScreen> {
           itemCount: widget.carList.length,
           itemBuilder: (BuildContext context, int index) {
             final currentCar = widget.carList[index];
-            return testDriveScreenListView(context, currentCar.brand!, currentCar.model!, currentCar.engine!, currentCar.releaseYear!, currentCar.color!, currentCar.body!, currentCar.complectation!, currentCar.drive!, currentCar.transmission!, currentCar.wheel!, currentCar.imageName!);
+            return testDriveScreenListView(context, currentCar.brand!, currentCar.model!, currentCar.engine!, currentCar.releaseYear!, currentCar.color!, currentCar.body!, currentCar.complectation!, currentCar.drive!, currentCar.transmission!, currentCar.wheel!, currentCar.imageName!, width, height);
           },
         ),
       ),

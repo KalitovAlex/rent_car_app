@@ -1,5 +1,6 @@
 
 import 'package:dio/dio.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -8,15 +9,13 @@ import 'package:rent_car_app/authorizationPage/bloc/registration/registration_bl
 import 'package:rent_car_app/authorizationPage/model/user.dart';
 import 'package:rent_car_app/authorizationPage/repository/abstract_user_repository.dart';
 import 'package:rent_car_app/authorizationPage/repository/user_repository.dart';
-import 'package:rent_car_app/core/globals.dart';
 import 'package:rent_car_app/core/routes.dart';
+import 'package:rent_car_app/firebase_options.dart';
 import 'package:rent_car_app/main/bloc/change_document_bloc.dart';
 import 'package:rent_car_app/main/model/car/car.dart';
 import 'package:rent_car_app/main/model/document.dart';
-import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
 import 'package:rent_car_app/main/repository/car/abstract_car_repository.dart';
 import 'package:rent_car_app/main/repository/car/car_repository.dart';
-import 'package:rent_car_app/main/repository/document_repository.dart';
 import 'package:rent_car_app/theme/theme.dart';
 import 'package:sizer/sizer.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_observer.dart';
@@ -24,11 +23,13 @@ import 'package:talker_bloc_logger/talker_bloc_logger_settings.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   initDependencies();
   initSingletons();
-  carRepository.getAllCar();
   runApp(const MyApp());
 }
 
@@ -40,7 +41,7 @@ void initSingletons() {
 
   //Register repository in GetIt
   GetIt.I.registerLazySingleton<AbstractUserRepository>(() => UserRepository());
-  GetIt.I.registerLazySingleton<AbstractDocumentRepository>(() => DocumentRepository());
+  // GetIt.I.registerLazySingleton<AbstractDocumentRepository>(() => DocumentRepository());
   GetIt.I.registerLazySingleton<AbstractCarRepository>(() => CarRepository());
 }
 void initDependencies() {

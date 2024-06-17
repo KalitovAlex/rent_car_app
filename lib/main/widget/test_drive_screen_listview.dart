@@ -6,20 +6,20 @@ import 'package:rent_car_app/widget/snack_bar.dart';
 import 'package:sizer/sizer.dart';
 
 
-Widget testDriveScreenListView(BuildContext context,String brand, String model, String engine, String releaseYear, String color, String body, String complectation, String drive, String transmission, String wheel,String image){
+Widget testDriveScreenListView(BuildContext context,String brand, String model, String engine, String releaseYear, String color, String body, String complectation, String drive, String transmission, String wheel,String image, height, width){
   List<DateTime?> dates = [];
   return Expanded(
     child: Container(
-      padding: EdgeInsets.only(right: 3.w,top: 5.h),
+      padding: EdgeInsets.only(left: width/50, right: width/50,top: height/25),
       child: SingleChildScrollView(
         child: Column(
           children: [
             ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.network(image,fit: BoxFit.cover,height: 30.h,width: 90.w,)),
-            SizedBox(height: 2.h,),
+            SizedBox(height: height/30,),
                       Container(
-                        width: 90.w,
-                        padding: EdgeInsets.only(left: 5.w,right: 5.w,top: 1.h),
-                        height: 40.h,
+                        width: width,
+                        padding: EdgeInsets.only(left: width/40,right: width/40,top: height/40),
+                        height: height/1.2,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30)
@@ -36,20 +36,20 @@ Widget testDriveScreenListView(BuildContext context,String brand, String model, 
                           ],
                         ),
                       ),
-                      SizedBox(height: 3.h,),
+                      SizedBox(height: height/20,),
                         Container(
                           decoration: BoxDecoration(color: const Color.fromARGB(255, 161, 195, 255),borderRadius: BorderRadius.circular(30)),
-                          width: 90.w,
-                          height: 35.h,
+                          width: width,
+                          height: height/1.2,
                             child: CalendarDatePicker2(
                               config: CalendarDatePicker2Config(),
                               value: dates,
                               onValueChanged: (date) => dates = date,
                         ),
                       ),
-                      SizedBox(height: 3.h,),
+                      SizedBox(height: height/20,),
                       Container(
-                        width: 85.w,
+                        width: width,
                         decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.blue,
@@ -74,7 +74,7 @@ Widget testDriveScreenListView(BuildContext context,String brand, String model, 
                                 }
                                 );
                       }, child: const Text('Записаться',style: TextStyle(color: Colors.white,fontSize: 20),))),
-                      SizedBox(height: 7.h,)
+                      SizedBox(height: height/50,)
           ],
         ),
       ),

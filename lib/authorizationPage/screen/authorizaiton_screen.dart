@@ -92,7 +92,7 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
                   child: TextButton(
                       onPressed: () {
                         authorization();
-                        bloccommand.add(AuthEvent());
+                        bloccommand.add(AuthEvent(login: emailController.text, password: passwordController.text));
                       },
                       child: Text(
                         'Войти',
