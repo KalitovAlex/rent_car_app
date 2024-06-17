@@ -20,6 +20,7 @@ class UserRepository extends AbstractUserRepository{
     try{
       final response = await FirebaseAuth.instance.signInWithEmailAndPassword(email: login!, password: password!);
       final user = await userReference.doc(response.user!.uid).get();
+      await documentRepository.getDocument(response.user!.uid);
       userModel = userModel.copyWith(phoneNumber: user.get('phone_number'), username: user.get('user_name'), uid: response.user!.uid);
       talker.log(userModel.phoneNumber);
       return true;

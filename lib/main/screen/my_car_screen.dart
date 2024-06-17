@@ -24,11 +24,6 @@ class _MyCarScreenState extends State<MyCarScreen> {
     @override
     void initState() {
       super.initState();
-      nameController.text = documentModel.name!;
-      whoGiveController.text = documentModel.issuedBy!;
-      documentNumberController.text = documentModel.number!;
-      whenGiveController.text = documentModel.whereIssued!;
-      categoriesController.text  = documentModel.categories!;
     }
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,6 @@ import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:rent_car_app/widget/loading_circle.dart';
 import 'package:rent_car_app/widget/snack_bar.dart';
 import 'package:sizer/sizer.dart';
-part '../extension/authorizaton_screen_extension.dart';
 
 @RoutePage()
 class AuthorizaitonScreen extends StatefulWidget {
@@ -91,7 +90,6 @@ class _AuthorizaitonScreenState extends State<AuthorizaitonScreen> {
                   decoration: button_black_decoration,
                   child: TextButton(
                       onPressed: () {
-                        authorization();
                         bloccommand.add(AuthEvent(login: emailController.text, password: passwordController.text));
                       },
                       child: Text(

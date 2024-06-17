@@ -23,6 +23,9 @@ import 'package:talker_bloc_logger/talker_bloc_logger_settings.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
+import 'main/repository/abstract_document_repository.dart';
+import 'main/repository/document_repository.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -41,7 +44,7 @@ void initSingletons() {
 
   //Register repository in GetIt
   GetIt.I.registerLazySingleton<AbstractUserRepository>(() => UserRepository());
-  // GetIt.I.registerLazySingleton<AbstractDocumentRepository>(() => DocumentRepository());
+  GetIt.I.registerLazySingleton<AbstractDocumentRepository>(() => DocumentRepository());
   GetIt.I.registerLazySingleton<AbstractCarRepository>(() => CarRepository());
 }
 void initDependencies() {

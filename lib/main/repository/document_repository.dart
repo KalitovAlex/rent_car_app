@@ -1,54 +1,36 @@
-// import 'package:dio/dio.dart';
-// import 'package:rent_car_app/core/globals.dart';
-// import 'package:rent_car_app/main/model/document.dart';
-// import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:rent_car_app/main/repository/abstract_document_repository.dart';
 
-// class DocumentRepository extends AbstractDocumentRepository{
-//   @override
-//   Future<bool> changeDocument() async{
-//     try{
-//       final response = await Dio().put(
-//         'http://$ip/api/documents?id=${documentModel.id}', data: documentModel.toJson()
-//         );
-//       talker.log(response.data);
-//         return true;
-//     } catch (e){
-//       talker.log(e);
-//       return false;
-//     }
-//   }
+import '../../core/globals.dart';
 
-//   @override
-//   Future<bool> getDocument() async{
-//     try{
-//       final response = await Dio().get(
-//         'http://$ip/api/documents?user_email=${userModel.email}'
-//       );
-//       final responseData = response.data;
-//       documentModel = Document.fromJson(responseData);
-//       return true;
-//     } catch(e){
-//       talker.log(e);
-//     return false;
-//     }
-//   }
+class DocumentRepository extends AbstractDocumentRepository{
+  @override
+  Future<bool> changeDocument() {
+    // TODO: implement changeDocument
+    throw UnimplementedError();
+  }
 
-//   @override
-//   Future<bool> makeDocument() async{
-//     try{
-//     final response = await Dio().post(
-//       'http://$ip/api/documents', data: {
-//         "name": userModel.name,
-//         "user_id" : userModel.id
-//       }
-//     );
-//     final responseData = response.data as Map<String, dynamic>;
-//     documentModel = Document.fromJson(responseData);
-//     return true;
-//     } catch(e){
-//       talker.log(e);
-//       return false;
-//     }
-//   }
+  @override
+  Future<bool> getDocument(String? uid) async {
+    try{
+    final response =  await documentReference.doc(uid).get();
+    documentModel = documentModel.copyWith(birthDate: response.get('birth_date'), categories: response.get('categories'), dateOfIssue: response.get('date_of_issue'), endDate: response.get('end_date'), issuedBy: response.get('issued_by'), name: response.get('name'), number: response.get('number'), whereIssued: response.get('where_issued'));
+    talker.log(response.get('birth_date'));
+    return true;
+    } on FirebaseException {
+      talker.error('firebaseExept');
+      return false;
+    }
+    catch(e){
+      talker.error(e);
+      return false;
+    }
+  }
 
-// }
+  @override
+  Future<bool> makeDocument() {
+    // TODO: implement makeDocument
+    throw UnimplementedError();
+  }
+
+}

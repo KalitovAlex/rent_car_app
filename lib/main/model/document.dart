@@ -18,14 +18,10 @@ class Document with _$Document {
         String? issuedBy,
         @JsonKey(name: "number")
         String? number,
-        @JsonKey(name: "id")
-        int? id,
         @JsonKey(name: "where_issued")
         String? whereIssued,
         @JsonKey(name: "categories")
         String? categories,
-        @JsonKey(name: "user_id")
-        int? userId,
     }) = _Document;
 
     factory Document.fromJson(Map<String, dynamic> json) => _$DocumentFromJson(json);

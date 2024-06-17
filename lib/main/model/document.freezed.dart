@@ -32,14 +32,10 @@ mixin _$Document {
   String? get issuedBy => throw _privateConstructorUsedError;
   @JsonKey(name: "number")
   String? get number => throw _privateConstructorUsedError;
-  @JsonKey(name: "id")
-  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: "where_issued")
   String? get whereIssued => throw _privateConstructorUsedError;
   @JsonKey(name: "categories")
   String? get categories => throw _privateConstructorUsedError;
-  @JsonKey(name: "user_id")
-  int? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,10 +55,8 @@ abstract class $DocumentCopyWith<$Res> {
       @JsonKey(name: "end_date") String? endDate,
       @JsonKey(name: "issued_by") String? issuedBy,
       @JsonKey(name: "number") String? number,
-      @JsonKey(name: "id") int? id,
       @JsonKey(name: "where_issued") String? whereIssued,
-      @JsonKey(name: "categories") String? categories,
-      @JsonKey(name: "user_id") int? userId});
+      @JsonKey(name: "categories") String? categories});
 }
 
 /// @nodoc
@@ -84,10 +78,8 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
     Object? endDate = freezed,
     Object? issuedBy = freezed,
     Object? number = freezed,
-    Object? id = freezed,
     Object? whereIssued = freezed,
     Object? categories = freezed,
-    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -114,10 +106,6 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
       whereIssued: freezed == whereIssued
           ? _value.whereIssued
           : whereIssued // ignore: cast_nullable_to_non_nullable
@@ -126,10 +114,6 @@ class _$DocumentCopyWithImpl<$Res, $Val extends Document>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 }
@@ -149,10 +133,8 @@ abstract class _$$DocumentImplCopyWith<$Res>
       @JsonKey(name: "end_date") String? endDate,
       @JsonKey(name: "issued_by") String? issuedBy,
       @JsonKey(name: "number") String? number,
-      @JsonKey(name: "id") int? id,
       @JsonKey(name: "where_issued") String? whereIssued,
-      @JsonKey(name: "categories") String? categories,
-      @JsonKey(name: "user_id") int? userId});
+      @JsonKey(name: "categories") String? categories});
 }
 
 /// @nodoc
@@ -172,10 +154,8 @@ class __$$DocumentImplCopyWithImpl<$Res>
     Object? endDate = freezed,
     Object? issuedBy = freezed,
     Object? number = freezed,
-    Object? id = freezed,
     Object? whereIssued = freezed,
     Object? categories = freezed,
-    Object? userId = freezed,
   }) {
     return _then(_$DocumentImpl(
       name: freezed == name
@@ -202,10 +182,6 @@ class __$$DocumentImplCopyWithImpl<$Res>
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
       whereIssued: freezed == whereIssued
           ? _value.whereIssued
           : whereIssued // ignore: cast_nullable_to_non_nullable
@@ -214,10 +190,6 @@ class __$$DocumentImplCopyWithImpl<$Res>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -232,10 +204,8 @@ class _$DocumentImpl implements _Document {
       @JsonKey(name: "end_date") this.endDate,
       @JsonKey(name: "issued_by") this.issuedBy,
       @JsonKey(name: "number") this.number,
-      @JsonKey(name: "id") this.id,
       @JsonKey(name: "where_issued") this.whereIssued,
-      @JsonKey(name: "categories") this.categories,
-      @JsonKey(name: "user_id") this.userId});
+      @JsonKey(name: "categories") this.categories});
 
   factory _$DocumentImpl.fromJson(Map<String, dynamic> json) =>
       _$$DocumentImplFromJson(json);
@@ -259,21 +229,15 @@ class _$DocumentImpl implements _Document {
   @JsonKey(name: "number")
   final String? number;
   @override
-  @JsonKey(name: "id")
-  final int? id;
-  @override
   @JsonKey(name: "where_issued")
   final String? whereIssued;
   @override
   @JsonKey(name: "categories")
   final String? categories;
-  @override
-  @JsonKey(name: "user_id")
-  final int? userId;
 
   @override
   String toString() {
-    return 'Document(name: $name, birthDate: $birthDate, dateOfIssue: $dateOfIssue, endDate: $endDate, issuedBy: $issuedBy, number: $number, id: $id, whereIssued: $whereIssued, categories: $categories, userId: $userId)';
+    return 'Document(name: $name, birthDate: $birthDate, dateOfIssue: $dateOfIssue, endDate: $endDate, issuedBy: $issuedBy, number: $number, whereIssued: $whereIssued, categories: $categories)';
   }
 
   @override
@@ -290,18 +254,16 @@ class _$DocumentImpl implements _Document {
             (identical(other.issuedBy, issuedBy) ||
                 other.issuedBy == issuedBy) &&
             (identical(other.number, number) || other.number == number) &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.whereIssued, whereIssued) ||
                 other.whereIssued == whereIssued) &&
             (identical(other.categories, categories) ||
-                other.categories == categories) &&
-            (identical(other.userId, userId) || other.userId == userId));
+                other.categories == categories));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, birthDate, dateOfIssue,
-      endDate, issuedBy, number, id, whereIssued, categories, userId);
+      endDate, issuedBy, number, whereIssued, categories);
 
   @JsonKey(ignore: true)
   @override
@@ -325,10 +287,8 @@ abstract class _Document implements Document {
       @JsonKey(name: "end_date") final String? endDate,
       @JsonKey(name: "issued_by") final String? issuedBy,
       @JsonKey(name: "number") final String? number,
-      @JsonKey(name: "id") final int? id,
       @JsonKey(name: "where_issued") final String? whereIssued,
-      @JsonKey(name: "categories") final String? categories,
-      @JsonKey(name: "user_id") final int? userId}) = _$DocumentImpl;
+      @JsonKey(name: "categories") final String? categories}) = _$DocumentImpl;
 
   factory _Document.fromJson(Map<String, dynamic> json) =
       _$DocumentImpl.fromJson;
@@ -352,17 +312,11 @@ abstract class _Document implements Document {
   @JsonKey(name: "number")
   String? get number;
   @override
-  @JsonKey(name: "id")
-  int? get id;
-  @override
   @JsonKey(name: "where_issued")
   String? get whereIssued;
   @override
   @JsonKey(name: "categories")
   String? get categories;
-  @override
-  @JsonKey(name: "user_id")
-  int? get userId;
   @override
   @JsonKey(ignore: true)
   _$$DocumentImplCopyWith<_$DocumentImpl> get copyWith =>

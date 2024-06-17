@@ -10,7 +10,6 @@ import 'package:rent_car_app/theme/style/text_form_styles.dart';
 import 'package:rent_car_app/widget/loading_circle.dart';
 import 'package:rent_car_app/widget/snack_bar.dart';
 import 'package:sizer/sizer.dart';
-part '../extension/registration_screen_extension.dart';
 
 @RoutePage()
 class RegistrationScreen extends StatefulWidget {
@@ -138,8 +137,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     child: TextButton(
                         onPressed: () {
                           if (userPassword.text == userSecondPassword.text) {
-                            register();
-                            bloccommand.add(RegistrationEvent());
+                            bloccommand.add(RegistrationEvent(phone_number: userNumber.text, user_name: userName.text, user_login: userLogin.text, email: userEmail.text, password: userPassword.text));
                           } else {
                             showSnackBar(context, 'Введите одинаковые пароли');
                           }
